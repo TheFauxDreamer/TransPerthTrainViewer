@@ -1,0 +1,7664 @@
+{
+  "timestamp": "05/01/2026 at 21:30:45",
+  "trains": {
+    "6668833": {
+      "id": "6668833",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "18:15"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:20"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:31"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:00"
+        }
+      ]
+    },
+    "6668841": {
+      "id": "6668841",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:33"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:13"
+        }
+      ]
+    },
+    "6668830": {
+      "id": "6668830",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:28"
+        }
+      ]
+    },
+    "6297585": {
+      "id": "6297585",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:14"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:20"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:27"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:33"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:43"
+        }
+      ]
+    },
+    "6668839": {
+      "id": "6668839",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:58"
+        }
+      ]
+    },
+    "6297473": {
+      "id": "6297473",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:33"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:44"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:50"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "20:13"
+        }
+      ]
+    },
+    "6668843": {
+      "id": "6668843",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:59"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "20:05"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "20:18"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "20:28"
+        }
+      ]
+    },
+    "6297447": {
+      "id": "6297447",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Yanchep Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "20:14"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "20:20"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "20:27"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "20:33"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "20:37"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "20:40"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "20:43"
+        }
+      ]
+    },
+    "6668606": {
+      "id": "6668606",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Alkimos Stn",
+          "time": "18:12"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:15"
+        }
+      ]
+    },
+    "6297469": {
+      "id": "6297469",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Eglinton Stn",
+          "time": "18:10"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:14"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:16"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:27"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:50"
+        }
+      ]
+    },
+    "6668677": {
+      "id": "6668677",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Butler Stn",
+          "time": "18:17"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:22"
+        }
+      ]
+    },
+    "6668649": {
+      "id": "6668649",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Currambine Stn",
+          "time": "18:11"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:15"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:27"
+        }
+      ]
+    },
+    "6668591": {
+      "id": "6668591",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "1 min delay",
+      "stops": [
+        {
+          "station": "Edgewater Stn",
+          "time": "18:12"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:15"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:34"
+        }
+      ]
+    },
+    "6668653": {
+      "id": "6668653",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Whitfords Stn",
+          "time": "18:12"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:15"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:25"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:38"
+        }
+      ]
+    },
+    "6668592": {
+      "id": "6668592",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "2 min delay",
+      "stops": [
+        {
+          "station": "Warwick Stn",
+          "time": "18:13"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:16"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:25"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:41"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:44"
+        }
+      ]
+    },
+    "6668608": {
+      "id": "6668608",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "2 min delay",
+      "stops": [
+        {
+          "station": "Stirling Stn",
+          "time": "18:13"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:23"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:27"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:33"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:49"
+        }
+      ]
+    },
+    "6668669": {
+      "id": "6668669",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:13"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:16"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:35"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:41"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "18:57"
+        }
+      ]
+    },
+    "6668674": {
+      "id": "6668674",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:23"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:01"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:07"
+        }
+      ]
+    },
+    "6668610": {
+      "id": "6668610",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:33"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:01"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:11"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:14"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:17"
+        }
+      ]
+    },
+    "6668681": {
+      "id": "6668681",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:56"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:11"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:27"
+        }
+      ]
+    },
+    "6668612": {
+      "id": "6668612",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:56"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:31"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:37"
+        }
+      ]
+    },
+    "6668595": {
+      "id": "6668595",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:16"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:31"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:41"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:44"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:47"
+        }
+      ]
+    },
+    "6668599": {
+      "id": "6668599",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:16"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:26"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:41"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "19:57"
+        }
+      ]
+    },
+    "6668614": {
+      "id": "6668614",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:26"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "20:01"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "20:07"
+        }
+      ]
+    },
+    "6668619": {
+      "id": "6668619",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "20:01"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "20:14"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "20:20"
+        }
+      ]
+    },
+    "6668657": {
+      "id": "6668657",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "20:16"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "20:29"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "20:35"
+        }
+      ]
+    },
+    "6668626": {
+      "id": "6668626",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "20:31"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Clarkson Stn",
+          "time": "20:38"
+        },
+        {
+          "station": "Butler Stn",
+          "time": "20:44"
+        },
+        {
+          "station": "Alkimos Stn",
+          "time": "20:47"
+        },
+        {
+          "station": "Eglinton Stn",
+          "time": "20:50"
+        }
+      ]
+    },
+    "6668675": {
+      "id": "6668675",
+      "line": "Yanchep Line",
+      "destination": "Yanchep",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Eglinton Stn",
+          "time": "18:11"
+        }
+      ]
+    },
+    "6668824": {
+      "id": "6668824",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Clarkson Stn",
+          "time": "18:10"
+        },
+        {
+          "station": "Currambine Stn",
+          "time": "18:14"
+        },
+        {
+          "station": "Joondalup Stn",
+          "time": "18:17"
+        },
+        {
+          "station": "Edgewater Stn",
+          "time": "18:20"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:27"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:40"
+        }
+      ]
+    },
+    "6297457": {
+      "id": "6297457",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "C",
+      "status": "1 min delay",
+      "stops": [
+        {
+          "station": "Edgewater Stn",
+          "time": "18:11"
+        },
+        {
+          "station": "Whitfords Stn",
+          "time": "18:14"
+        },
+        {
+          "station": "Greenwood Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Warwick Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Stirling Stn",
+          "time": "18:25"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:31"
+        }
+      ]
+    },
+    "6668802": {
+      "id": "6668802",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Stirling Stn",
+          "time": "20:52"
+        },
+        {
+          "station": "Glendalough Stn",
+          "time": "20:55"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "20:58"
+        }
+      ]
+    },
+    "6668836": {
+      "id": "6668836",
+      "line": "Yanchep Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Glendalough Stn",
+          "time": "18:15"
+        },
+        {
+          "station": "Leederville Stn",
+          "time": "18:18"
+        }
+      ]
+    },
+    "6670557": {
+      "id": "6670557",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:10"
+        }
+      ]
+    },
+    "6670575": {
+      "id": "6670575",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:20"
+        }
+      ]
+    },
+    "6670580": {
+      "id": "6670580",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:32"
+        }
+      ]
+    },
+    "6670584": {
+      "id": "6670584",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:27"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:47"
+        }
+      ]
+    },
+    "6670592": {
+      "id": "6670592",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:14"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "20:02"
+        }
+      ]
+    },
+    "6670690": {
+      "id": "6670690",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "20:17"
+        }
+      ]
+    },
+    "6670590": {
+      "id": "6670590",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:44"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "20:32"
+        }
+      ]
+    },
+    "6670666": {
+      "id": "6670666",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:59"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "20:27"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "20:37"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "20:40"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "20:47"
+        }
+      ]
+    },
+    "6670594": {
+      "id": "6670594",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Mandurah Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "20:14"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "20:24"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "20:42"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:45"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "20:49"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "20:52"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "20:55"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "21:02"
+        }
+      ]
+    },
+    "6670303": {
+      "id": "6670303",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "2 min delay",
+      "stops": [
+        {
+          "station": "Rockingham Stn",
+          "time": "18:14"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:28"
+        }
+      ]
+    },
+    "6670337": {
+      "id": "6670337",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Rockingham Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:31"
+        }
+      ]
+    },
+    "6670552": {
+      "id": "6670552",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Warnbro Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:00"
+        }
+      ]
+    },
+    "6670340": {
+      "id": "6670340",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "3 min delay",
+      "stops": [
+        {
+          "station": "Kwinana Stn",
+          "time": "18:18"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:25"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:39"
+        }
+      ]
+    },
+    "6670285": {
+      "id": "6670285",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:46"
+        }
+      ]
+    },
+    "6670289": {
+      "id": "6670289",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "18:56"
+        }
+      ]
+    },
+    "6670312": {
+      "id": "6670312",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:19"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:25"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:35"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "18:56"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:06"
+        }
+      ]
+    },
+    "6670343": {
+      "id": "6670343",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:27"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:35"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:41"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:16"
+        }
+      ]
+    },
+    "6670317": {
+      "id": "6670317",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:16"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:26"
+        }
+      ]
+    },
+    "6670321": {
+      "id": "6670321",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:01"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:14"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:26"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:36"
+        }
+      ]
+    },
+    "6670345": {
+      "id": "6670345",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:11"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:46"
+        }
+      ]
+    },
+    "6670338": {
+      "id": "6670338",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "19:46"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "19:56"
+        }
+      ]
+    },
+    "6670354": {
+      "id": "6670354",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "19:56"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "20:10"
+        }
+      ]
+    },
+    "6670332": {
+      "id": "6670332",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:44"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "19:50"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "20:11"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "20:25"
+        }
+      ]
+    },
+    "6670215": {
+      "id": "6670215",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "19:59"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "20:05"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "20:18"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "20:26"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "20:40"
+        }
+      ]
+    },
+    "6670349": {
+      "id": "6670349",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Perth Underground Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "20:14"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "20:20"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:24"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "20:33"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "20:37"
+        },
+        {
+          "station": "Rockingham Stn",
+          "time": "20:41"
+        },
+        {
+          "station": "Warnbro Stn",
+          "time": "20:45"
+        },
+        {
+          "station": "Lakelands Stn",
+          "time": "20:55"
+        }
+      ]
+    },
+    "6670574": {
+      "id": "6670574",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Rockingham Stn",
+          "time": "18:16"
+        },
+        {
+          "station": "Wellard Stn",
+          "time": "18:20"
+        },
+        {
+          "station": "Kwinana Stn",
+          "time": "18:23"
+        },
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:50"
+        }
+      ]
+    },
+    "6670298": {
+      "id": "6670298",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "2 min delay",
+      "stops": [
+        {
+          "station": "Lakelands Stn",
+          "time": "18:18"
+        }
+      ]
+    },
+    "6670277": {
+      "id": "6670277",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Lakelands Stn",
+          "time": "18:21"
+        }
+      ]
+    },
+    "6670274": {
+      "id": "6670274",
+      "line": "Mandurah Line",
+      "destination": "Mandurah",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "23 min delay",
+      "stops": [
+        {
+          "station": "Lakelands Stn",
+          "time": "18:24"
+        }
+      ]
+    },
+    "6670608": {
+      "id": "6670608",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Aubin Grove Stn",
+          "time": "18:20"
+        },
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:23"
+        },
+        {
+          "station": "Murdoch Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:31"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:33"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:40"
+        }
+      ]
+    },
+    "6670679": {
+      "id": "6670679",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "C",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bull Creek Stn",
+          "time": "18:20"
+        },
+        {
+          "station": "Canning Bridge Stn",
+          "time": "18:23"
+        },
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:30"
+        }
+      ]
+    },
+    "6670600": {
+      "id": "6670600",
+      "line": "Mandurah Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "6",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Elizabeth Quay Stn",
+          "time": "18:19"
+        }
+      ]
+    },
+    "6669353": {
+      "id": "6669353",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "18:35"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "18:41"
+        },
+        {
+          "station": "City West Stn",
+          "time": "18:51"
+        }
+      ]
+    },
+    "5213893": {
+      "id": "5213893",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "18:56"
+        },
+        {
+          "station": "City West Stn",
+          "time": "19:06"
+        }
+      ]
+    },
+    "6669339": {
+      "id": "6669339",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:11"
+        },
+        {
+          "station": "City West Stn",
+          "time": "19:21"
+        }
+      ]
+    },
+    "6669375": {
+      "id": "6669375",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:20"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:26"
+        },
+        {
+          "station": "City West Stn",
+          "time": "19:36"
+        }
+      ]
+    },
+    "6669308": {
+      "id": "6669308",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:41"
+        },
+        {
+          "station": "City West Stn",
+          "time": "19:51"
+        }
+      ]
+    },
+    "6669317": {
+      "id": "6669317",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:50"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:56"
+        },
+        {
+          "station": "City West Stn",
+          "time": "20:06"
+        }
+      ]
+    },
+    "6669362": {
+      "id": "6669362",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "20:05"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "20:11"
+        },
+        {
+          "station": "City West Stn",
+          "time": "20:21"
+        }
+      ]
+    },
+    "6669323": {
+      "id": "6669323",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Fremantle Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "20:20"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "20:26"
+        },
+        {
+          "station": "City West Stn",
+          "time": "20:36"
+        }
+      ]
+    },
+    "5213887": {
+      "id": "5213887",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "4 min delay",
+      "stops": [
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:22"
+        }
+      ]
+    },
+    "6669050": {
+      "id": "6669050",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "2 min delay",
+      "stops": [
+        {
+          "station": "Claremont Stn",
+          "time": "18:22"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:32"
+        }
+      ]
+    },
+    "5213884": {
+      "id": "5213884",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Karrakatta Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "18:33"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "18:35"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:42"
+        }
+      ]
+    },
+    "6669085": {
+      "id": "6669085",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "18:41"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "18:55"
+        }
+      ]
+    },
+    "6669018": {
+      "id": "6669018",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "18:56"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:10"
+        }
+      ]
+    },
+    "6669027": {
+      "id": "6669027",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:11"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:20"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:25"
+        }
+      ]
+    },
+    "6669073": {
+      "id": "6669073",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:26"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:33"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:40"
+        }
+      ]
+    },
+    "6669034": {
+      "id": "6669034",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:41"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "19:50"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "19:55"
+        }
+      ]
+    },
+    "6669043": {
+      "id": "6669043",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "19:56"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "20:05"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "20:10"
+        }
+      ]
+    },
+    "6669065": {
+      "id": "6669065",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "20:11"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "20:18"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "20:20"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "20:25"
+        }
+      ]
+    },
+    "6669079": {
+      "id": "6669079",
+      "line": "Fremantle Line",
+      "destination": "Fremantle",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "20:26"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Grant Street Stn",
+          "time": "20:33"
+        },
+        {
+          "station": "Cottesloe Stn",
+          "time": "20:35"
+        },
+        {
+          "station": "North Fremantle Stn",
+          "time": "20:40"
+        }
+      ]
+    },
+    "6669330": {
+      "id": "6669330",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Grant Street Stn",
+          "time": "18:21"
+        },
+        {
+          "station": "Swanbourne Stn",
+          "time": "18:23"
+        },
+        {
+          "station": "Claremont Stn",
+          "time": "18:24"
+        },
+        {
+          "station": "Loch Street Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Karrakatta Stn",
+          "time": "18:27"
+        },
+        {
+          "station": "City West Stn",
+          "time": "18:37"
+        }
+      ]
+    },
+    "6669322": {
+      "id": "6669322",
+      "line": "Fremantle Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "City West Stn",
+          "time": "18:25"
+        }
+      ]
+    },
+    "6667438": {
+      "id": "6667438",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "18:35"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "18:59"
+        }
+      ]
+    },
+    "6667485": {
+      "id": "6667485",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:14"
+        }
+      ]
+    },
+    "6667445": {
+      "id": "6667445",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:29"
+        }
+      ]
+    },
+    "6667454": {
+      "id": "6667454",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:20"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:33"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:44"
+        }
+      ]
+    },
+    "6667477": {
+      "id": "6667477",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:59"
+        }
+      ]
+    },
+    "6667494": {
+      "id": "6667494",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:50"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:14"
+        }
+      ]
+    },
+    "6667464": {
+      "id": "6667464",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "20:05"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:18"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:29"
+        }
+      ]
+    },
+    "6667501": {
+      "id": "6667501",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Midland Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "20:20"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:33"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:44"
+        }
+      ]
+    },
+    "6667234": {
+      "id": "6667234",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "4 min delay",
+      "stops": [
+        {
+          "station": "Bassendean Stn",
+          "time": "18:26"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "18:35"
+        }
+      ]
+    },
+    "6667248": {
+      "id": "6667248",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "1 min delay",
+      "stops": [
+        {
+          "station": "Maylands Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "18:29"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:31"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "18:43"
+        }
+      ]
+    },
+    "6667207": {
+      "id": "6667207",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:41"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "18:54"
+        }
+      ]
+    },
+    "6667216": {
+      "id": "6667216",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "18:50"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:06"
+        }
+      ]
+    },
+    "6667240": {
+      "id": "6667240",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:05"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:21"
+        }
+      ]
+    },
+    "6667258": {
+      "id": "6667258",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:20"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:27"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:36"
+        }
+      ]
+    },
+    "6667226": {
+      "id": "6667226",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:27"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:35"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "19:51"
+        }
+      ]
+    },
+    "6667265": {
+      "id": "6667265",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "19:50"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "20:06"
+        }
+      ]
+    },
+    "6667194": {
+      "id": "6667194",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "20:05"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "20:21"
+        }
+      ]
+    },
+    "6667202": {
+      "id": "6667202",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "20:20"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "20:27"
+        },
+        {
+          "station": "Bassendean Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Guildford Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Woodbridge Stn",
+          "time": "20:36"
+        }
+      ]
+    },
+    "6667430": {
+      "id": "6667430",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bassendean Stn",
+          "time": "18:27"
+        },
+        {
+          "station": "Ashfield Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "18:44"
+        }
+      ]
+    },
+    "6667249": {
+      "id": "6667249",
+      "line": "Midland Line",
+      "destination": "Midland",
+      "platform": "4",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "20:27"
+        },
+        {
+          "station": "Maylands Stn",
+          "time": "20:35"
+        },
+        {
+          "station": "Meltham Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:38"
+        }
+      ]
+    },
+    "6667500": {
+      "id": "6667500",
+      "line": "Midland Line",
+      "destination": "Perth",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:29"
+        }
+      ]
+    },
+    "6669776": {
+      "id": "6669776",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "18:28"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "18:30"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "18:39"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:06"
+        }
+      ]
+    },
+    "6669544": {
+      "id": "6669544",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Gosnells Stn",
+          "time": "18:31"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "18:33"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "18:43"
+        }
+      ]
+    },
+    "6669785": {
+      "id": "6669785",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "18:54"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:11"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:21"
+        }
+      ]
+    },
+    "6669551": {
+      "id": "6669551",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Queens Park Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "18:58"
+        }
+      ]
+    },
+    "6669732": {
+      "id": "6669732",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:26"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:36"
+        }
+      ]
+    },
+    "6669558": {
+      "id": "6669558",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:01"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "19:13"
+        }
+      ]
+    },
+    "6669739": {
+      "id": "6669739",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:41"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "19:51"
+        }
+      ]
+    },
+    "6669566": {
+      "id": "6669566",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "18:57"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "18:59"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:01"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:16"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "19:28"
+        }
+      ]
+    },
+    "6669745": {
+      "id": "6669745",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:56"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:06"
+        }
+      ]
+    },
+    "6669575": {
+      "id": "6669575",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:12"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:14"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:16"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:27"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:31"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:33"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "19:43"
+        }
+      ]
+    },
+    "6669753": {
+      "id": "6669753",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "20:11"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:21"
+        }
+      ]
+    },
+    "6669584": {
+      "id": "6669584",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:27"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:29"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:31"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "19:46"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "19:58"
+        }
+      ]
+    },
+    "6669760": {
+      "id": "6669760",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:24"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "20:26"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:36"
+        }
+      ]
+    },
+    "6669593": {
+      "id": "6669593",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:42"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:44"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "19:46"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:01"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "20:13"
+        }
+      ]
+    },
+    "6669769": {
+      "id": "6669769",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:24"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:39"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "20:41"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "20:43"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "20:45"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "20:51"
+        }
+      ]
+    },
+    "6669538": {
+      "id": "6669538",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "19:57"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "19:59"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:01"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:16"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:18"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "20:28"
+        }
+      ]
+    },
+    "6669777": {
+      "id": "6669777",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Armadale Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:37"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:39"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "20:43"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:47"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:49"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:51"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:54"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "20:56"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "20:58"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "21:00"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "21:06"
+        }
+      ]
+    },
+    "6669545": {
+      "id": "6669545",
+      "line": "Armadale Line",
+      "destination": "Byford",
+      "platform": "3",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "20:12"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "20:14"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:16"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "20:27"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:31"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:33"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:38"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:40"
+        },
+        {
+          "station": "Armadale Stn",
+          "time": "20:43"
+        }
+      ]
+    },
+    "6696418": {
+      "id": "6696418",
+      "line": "Armadale Line",
+      "destination": "Armadale",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "20:26"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "20:29"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "20:31"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "Beckenham Stn",
+          "time": "20:38"
+        },
+        {
+          "station": "Maddington Stn",
+          "time": "20:42"
+        },
+        {
+          "station": "Gosnells Stn",
+          "time": "20:45"
+        },
+        {
+          "station": "Seaforth Stn",
+          "time": "20:48"
+        },
+        {
+          "station": "Kelmscott Stn",
+          "time": "20:51"
+        },
+        {
+          "station": "Challis Stn",
+          "time": "20:52"
+        },
+        {
+          "station": "Sherwood Stn",
+          "time": "20:54"
+        }
+      ]
+    },
+    "6205693": {
+      "id": "6205693",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Beckenham Stn",
+          "time": "18:32"
+        },
+        {
+          "station": "Cannington Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Queens Park Stn",
+          "time": "18:36"
+        },
+        {
+          "station": "Oats Street Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Carlisle Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Victoria Park Stn",
+          "time": "18:42"
+        },
+        {
+          "station": "Burswood Stn",
+          "time": "18:44"
+        },
+        {
+          "station": "McIver Stn",
+          "time": "18:50"
+        }
+      ]
+    },
+    "6205700": {
+      "id": "6205700",
+      "line": "Armadale Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "18:35"
+        }
+      ]
+    },
+    "6696419": {
+      "id": "6696419",
+      "line": "Armadale Line",
+      "destination": "Armadale",
+      "platform": "2",
+      "ncar": "4",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "McIver Stn",
+          "time": "20:34"
+        }
+      ]
+    },
+    "6668282": {
+      "id": "6668282",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "18:38"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "18:46"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:52"
+        }
+      ]
+    },
+    "6668290": {
+      "id": "6668290",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:01"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:03"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:07"
+        }
+      ]
+    },
+    "6668302": {
+      "id": "6668302",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:16"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:18"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:22"
+        }
+      ]
+    },
+    "6668323": {
+      "id": "6668323",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:31"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:33"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:37"
+        }
+      ]
+    },
+    "6668328": {
+      "id": "6668328",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:46"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:48"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:52"
+        }
+      ]
+    },
+    "6668333": {
+      "id": "6668333",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:01"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:03"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:07"
+        }
+      ]
+    },
+    "6668278": {
+      "id": "6668278",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:16"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:18"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:22"
+        }
+      ]
+    },
+    "6668283": {
+      "id": "6668283",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Ellenbrook Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:31"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:33"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:37"
+        }
+      ]
+    },
+    "6668121": {
+      "id": "6668121",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "4 min delay",
+      "stops": [
+        {
+          "station": "Whiteman Park Stn",
+          "time": "18:43"
+        }
+      ]
+    },
+    "6668124": {
+      "id": "6668124",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "18:37"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "18:43"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "18:51"
+        }
+      ]
+    },
+    "6668148": {
+      "id": "6668148",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "18:48"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "18:52"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:03"
+        }
+      ]
+    },
+    "6668154": {
+      "id": "6668154",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:02"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:06"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:09"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:17"
+        }
+      ]
+    },
+    "6668160": {
+      "id": "6668160",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:17"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:21"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:24"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:32"
+        }
+      ]
+    },
+    "6668098": {
+      "id": "6668098",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:32"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:36"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:39"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "19:47"
+        }
+      ]
+    },
+    "6668104": {
+      "id": "6668104",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:47"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "19:51"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "19:54"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:02"
+        }
+      ]
+    },
+    "6668113": {
+      "id": "6668113",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "20:02"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:06"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:09"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:17"
+        }
+      ]
+    },
+    "6668125": {
+      "id": "6668125",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "2",
+      "series": "A",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "20:17"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:21"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:24"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:32"
+        }
+      ]
+    },
+    "6670796": {
+      "id": "6670796",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:38"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:46"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:48"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:52"
+        }
+      ]
+    },
+    "6668149": {
+      "id": "6668149",
+      "line": "Ellenbrook Line",
+      "destination": "Ellenbrook",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "20:32"
+        },
+        {
+          "station": "Morley Stn",
+          "time": "20:36"
+        },
+        {
+          "station": "Noranda Stn",
+          "time": "20:39"
+        },
+        {
+          "station": "Whiteman Park Stn",
+          "time": "20:47"
+        }
+      ]
+    },
+    "6668277": {
+      "id": "6668277",
+      "line": "Ellenbrook Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "2",
+      "series": "A",
+      "status": "1 min delay",
+      "stops": [
+        {
+          "station": "Morley Stn",
+          "time": "18:34"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:39"
+        }
+      ]
+    },
+    "6667751": {
+      "id": "6667751",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "18:38"
+        }
+      ]
+    },
+    "6667890": {
+      "id": "6667890",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "2 min delay",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:44"
+        }
+      ]
+    },
+    "6667699": {
+      "id": "6667699",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "1 min delay",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "18:47"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "18:51"
+        }
+      ]
+    },
+    "6668045": {
+      "id": "6668045",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "18:53"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "18:57"
+        }
+      ]
+    },
+    "6667754": {
+      "id": "6667754",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "18:58"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:03"
+        }
+      ]
+    },
+    "6668023": {
+      "id": "6668023",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:08"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:12"
+        }
+      ]
+    },
+    "6667713": {
+      "id": "6667713",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:13"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:18"
+        }
+      ]
+    },
+    "6667880": {
+      "id": "6667880",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:23"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:27"
+        }
+      ]
+    },
+    "6667732": {
+      "id": "6667732",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:28"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:33"
+        }
+      ]
+    },
+    "6668036": {
+      "id": "6668036",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:38"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:42"
+        }
+      ]
+    },
+    "6667744": {
+      "id": "6667744",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:43"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:48"
+        }
+      ]
+    },
+    "6668055": {
+      "id": "6668055",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "19:53"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "19:57"
+        }
+      ]
+    },
+    "6667765": {
+      "id": "6667765",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "19:58"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:03"
+        }
+      ]
+    },
+    "6667868": {
+      "id": "6667868",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:08"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:12"
+        }
+      ]
+    },
+    "6667723": {
+      "id": "6667723",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "20:13"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:18"
+        }
+      ]
+    },
+    "6667891": {
+      "id": "6667891",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:23"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:27"
+        }
+      ]
+    },
+    "6667700": {
+      "id": "6667700",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "20:28"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:33"
+        }
+      ]
+    },
+    "6668046": {
+      "id": "6668046",
+      "line": "Airport Line",
+      "destination": "Claremont",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:38"
+        },
+        {
+          "station": "Bayswater Stn",
+          "time": "20:42"
+        }
+      ]
+    },
+    "6667755": {
+      "id": "6667755",
+      "line": "Airport Line",
+      "destination": "High Wycombe",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Bayswater Stn",
+          "time": "20:43"
+        },
+        {
+          "station": "Redcliffe Stn",
+          "time": "20:48"
+        }
+      ]
+    },
+    "6669939": {
+      "id": "6669939",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "18:51"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "18:55"
+        }
+      ]
+    },
+    "6670123": {
+      "id": "6670123",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:40"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "18:45"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "18:49"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "18:51"
+        }
+      ]
+    },
+    "6669951": {
+      "id": "6669951",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:07"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:10"
+        }
+      ]
+    },
+    "6670135": {
+      "id": "6670135",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "18:55"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:00"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:04"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "19:06"
+        }
+      ]
+    },
+    "6669961": {
+      "id": "6669961",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:22"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:25"
+        }
+      ]
+    },
+    "6670145": {
+      "id": "6670145",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:10"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:15"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:19"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "19:21"
+        }
+      ]
+    },
+    "6669985": {
+      "id": "6669985",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:37"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:40"
+        }
+      ]
+    },
+    "6670157": {
+      "id": "6670157",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:25"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:30"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:34"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "19:36"
+        }
+      ]
+    },
+    "6669918": {
+      "id": "6669918",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:52"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:55"
+        }
+      ]
+    },
+    "6670166": {
+      "id": "6670166",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:40"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "19:45"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "19:49"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "19:51"
+        }
+      ]
+    },
+    "6669930": {
+      "id": "6669930",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:07"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:10"
+        }
+      ]
+    },
+    "6670178": {
+      "id": "6670178",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "19:55"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:00"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:04"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "20:06"
+        }
+      ]
+    },
+    "6669940": {
+      "id": "6669940",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:22"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:25"
+        }
+      ]
+    },
+    "6670124": {
+      "id": "6670124",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:10"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:15"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:19"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "20:21"
+        }
+      ]
+    },
+    "6669952": {
+      "id": "6669952",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:37"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:40"
+        }
+      ]
+    },
+    "6670136": {
+      "id": "6670136",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Perth",
+      "platform": "1",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Cockburn Central Stn",
+          "time": "20:25"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:30"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:34"
+        },
+        {
+          "station": "Thornlie Stn",
+          "time": "20:36"
+        }
+      ]
+    },
+    "6669962": {
+      "id": "6669962",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "On Time",
+      "stops": [
+        {
+          "station": "Thornlie Stn",
+          "time": "20:49"
+        },
+        {
+          "station": "Nicholson Road Stn",
+          "time": "20:52"
+        },
+        {
+          "station": "Ranford Road Stn",
+          "time": "20:55"
+        }
+      ]
+    },
+    "6669929": {
+      "id": "6669929",
+      "line": "Thornlie-Cockburn Line",
+      "destination": "Cockburn Central",
+      "platform": "2",
+      "ncar": "3",
+      "series": "B",
+      "status": "1 min delay",
+      "stops": [
+        {
+          "station": "Ranford Road Stn",
+          "time": "18:41"
+        }
+      ]
+    }
+  }
+}

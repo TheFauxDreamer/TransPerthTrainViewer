@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Train Map - Transperth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .info-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .line-name {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .timestamp {
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        .map-container {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 40px;
+            overflow: auto;
+            position: relative;
+        }
+
+        #network-map {
+            width: 100%;
+            height: auto;
+            min-height: 600px;
+        }
+
+        .train-marker {
+            cursor: pointer;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .train-car {
+            transition: all 1s linear;
+        }
+
+        .train-info-popup {
+            position: absolute;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 10px 12px;
+            font-size: 0.85em;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+
+        .train-info-popup .time {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .train-info-popup .dest {
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .train-info-popup .details {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 2px;
+        }
+
+        .legend {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 20px 30px;
+            margin-top: 20px;
+        }
+
+        .legend-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .legend-items {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+        }
+
+        .legend-line {
+            width: 30px;
+            height: 3px;
+        }
+
+        .legend-rect {
+            width: 20px;
+            height: 8px;
+        }
+
+        .debug-menu {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            min-width: 300px;
+            display: none;
+        }
+
+        .debug-menu.active {
+            display: block;
+        }
+
+        .debug-menu h3 {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .debug-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .debug-control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .debug-control-group label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .debug-control-group input[type="time"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .debug-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .debug-btn {
+            padding: 8px 12px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .debug-btn:hover {
+            background: #555;
+        }
+
+        .debug-btn.secondary {
+            background: #666;
+        }
+
+        .debug-btn.secondary:hover {
+            background: #888;
+        }
+
+        .debug-time-display {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .debug-status {
+            font-size: 0.85em;
+            color: #e32400;
+            font-weight: 500;
+        }
+
+        .debug-range {
+            font-size: 0.85em;
+            color: #666;
+            background: #f5f5f5;
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        .debug-error {
+            font-size: 0.85em;
+            color: #e32400;
+            background: #fff0f0;
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .debug-error.show {
+            display: block;
+        }
+
+        .favorite-station {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            min-width: 280px;
+            max-width: 350px;
+        }
+
+        .favorite-station h4 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .favorite-station-name {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .favorite-change {
+            font-size: 0.75em;
+            color: #666;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .favorite-change:hover {
+            color: #333;
+        }
+
+        .favorite-trains {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .favorite-train {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            border-left: 3px solid #333;
+        }
+
+        .favorite-train-info {
+            flex: 1;
+        }
+
+        .favorite-train-time {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .favorite-train-dest {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .favorite-train-countdown {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #333;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .favorite-train-countdown.departing {
+            color: #e32400;
+        }
+
+        .favorite-train-countdown.soon {
+            color: #e3711c;
+        }
+
+        .favorite-setup {
+            text-align: center;
+        }
+
+        .favorite-setup select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .favorite-setup button {
+            padding: 8px 16px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .favorite-setup button:hover {
+            background: #555;
+        }
+
+        .favorite-no-trains {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Live Train Map</h1>
+            <div class="info-bar">
+                <div class="line-name" id="lineName">Transperth Network</div>
+                <div class="timestamp" id="timestamp">Loading...</div>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <div class="favorite-station" id="favoriteStation">
+                <div id="favoriteContent"></div>
+            </div>
+            <svg id="network-map" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    text {
+                        font: 1px Helvetica;
+                        font-weight: 600;
+                        white-space: pre;
+                        dominant-baseline: central;
+                    }
+
+                    line {
+                        stroke-width: 1;
+                        fill: none;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                        opacity: 0.4;
+                    }
+
+                    .c0 {
+                        stroke: #669c35
+                    }
+
+                    .c1 {
+                        stroke: #1eafa3
+                    }
+
+                    .c2 {
+                        stroke: #000000
+                    }
+
+                    .c3 {
+                        stroke: #0042aa
+                    }
+
+                    .c4 {
+                        stroke: #b5396b
+                    }
+
+                    .c5 {
+                        stroke: #e3711c
+                    }
+
+                    .c6 {
+                        stroke: #fdad00
+                    }
+
+                    .c7 {
+                        stroke: #aaaaaa
+                    }
+
+                    .c8 {
+                        stroke: #e32400
+                    }
+
+                    .c9 {
+                        stroke: #e392fe
+                    }
+
+                    .w1 {
+                        stroke-width: 1;
+                    }
+                </style>
+                <defs>
+                    <g id="wm-xf">
+                        <circle r="1.2" fill="#000" />
+                        <circle r="0.9" fill="#fff" />
+                        <circle r="0.6" fill="#000" />
+                        <circle r="0.3" fill="#fff" />
+                    </g>
+                    <g id="wm">
+                        <circle r="0.6" fill="#000" />
+                        <circle r="0.3" fill="#fff" />
+                    </g>
+                </defs>
+
+                <!-- Network lines -->
+                <line class="c0 " x1="84" y1="38" x2="94" y2="38" />
+                <line class="c0 " x1="11" y1="11" x2="104" y2="104" />
+                <line class="c1 " x1="84" y1="24" x2="94" y2="24" />
+                <line class="c1 " x1="143" y1="67" x2="153" y2="77" />
+                <line class="c1 " x1="134" y1="67" x2="143" y2="67" />
+                <line class="c1 " x1="64" y1="137" x2="134" y2="67" />
+                <line class="c3 " x1="84" y1="30" x2="94" y2="30" />
+                <line class="c3 " x1="35" y1="164" x2="101" y2="98" />
+                <line class="c4 " x1="102" y1="97" x2="162" y2="37" />
+                <line class="c4 " x1="84" y1="34" x2="94" y2="34" />
+                <line class="c5 " x1="84" y1="32" x2="94" y2="32" />
+                <line class="c5 " x1="105" y1="105" x2="177" y2="177" />
+                <line class="c6 " x1="84" y1="26" x2="94" y2="26" />
+                <line class="c6 " x1="138" y1="88" x2="192" y2="142" />
+                <line class="c6 " x1="104" y1="99" x2="115" y2="88" />
+                <line class="c6 " x1="115" y1="88" x2="138" y2="88" />
+                <line class="c7 " x1="107" y1="102" x2="107" y2="103" />
+                <line class="c7 " x1="106" y1="104" x2="107" y2="103" />
+                <line class="c7 " x1="106" y1="101" x2="107" y2="102" />
+                <line class="c8 " x1="84" y1="28" x2="94" y2="28" />
+                <line class="c8 " x1="132" y1="39" x2="132" y2="65" />
+                <line class="c8 " x1="101" y1="96" x2="132" y2="65" />
+                <line class="c9 " x1="105" y1="100" x2="116" y2="89" />
+                <line class="c9 " x1="84" y1="36" x2="94" y2="36" />
+                <line class="c9 " x1="136" y1="134" x2="142" y2="128" />
+                <line class="c9 " x1="142" y1="128" x2="151" y2="128" />
+                <line class="c9 " x1="137" y1="89" x2="162" y2="114" />
+                <line class="c9 " x1="162" y1="114" x2="162" y2="117" />
+                <line class="c9 " x1="151" y1="128" x2="162" y2="117" />
+                <line class="c9 " x1="116" y1="89" x2="137" y2="89" />
+
+                <!-- Stations -->
+                <use x="11" y="11" href="#wm" /><text x="10.25" y="11" text-anchor="end"
+                    transform="rotate(-45 11, 11)">Yanchep</text>
+                <use x="17" y="17" href="#wm" /><text x="16.25" y="17" text-anchor="end"
+                    transform="rotate(-45 17, 17)">Eglinton</text>
+                <use x="23" y="23" href="#wm" /><text x="22.25" y="23" text-anchor="end"
+                    transform="rotate(-45 23, 23)">Alkimos</text>
+                <use x="29" y="29" href="#wm" /><text x="28.25" y="29" text-anchor="end"
+                    transform="rotate(-45 29, 29)">Butler</text>
+                <use x="35" y="35" href="#wm" /><text x="34.25" y="35" text-anchor="end"
+                    transform="rotate(-45 35, 35)">Clarkson</text>
+                <use x="35" y="164" href="#wm" /><text x="34.25" y="164" text-anchor="end"
+                    transform="rotate(45 35, 164)">Fremantle</text>
+                <use x="39" y="160" href="#wm" /><text x="38.25" y="160" text-anchor="end"
+                    transform="rotate(45 39, 160)">North Fremantle</text>
+                <use x="41" y="41" href="#wm" /><text x="40.25" y="41" text-anchor="end"
+                    transform="rotate(-45 41, 41)">Currambine</text>
+                <use x="43" y="156" href="#wm" /><text x="42.25" y="156" text-anchor="end"
+                    transform="rotate(45 43, 156)">Victoria Street</text>
+                <use x="47" y="47" href="#wm" /><text x="46.25" y="47" text-anchor="end"
+                    transform="rotate(-45 47, 47)">Joondalup</text>
+                <use x="47" y="152" href="#wm" /><text x="46.25" y="152" text-anchor="end"
+                    transform="rotate(45 47, 152)">Mosman Park</text>
+                <use x="51" y="148" href="#wm" /><text x="50.25" y="148" text-anchor="end"
+                    transform="rotate(45 51, 148)">Cottesloe</text>
+                <use x="53" y="53" href="#wm" /><text x="52.25" y="53" text-anchor="end"
+                    transform="rotate(-45 53, 53)">Edgewater</text>
+                <use x="55" y="144" href="#wm" /><text x="54.25" y="144" text-anchor="end"
+                    transform="rotate(45 55, 144)">Grant Street</text>
+                <use x="59" y="59" href="#wm" /><text x="58.25" y="59" text-anchor="end"
+                    transform="rotate(-45 59, 59)">Whitfords</text>
+                <use x="59" y="140" href="#wm" /><text x="58.25" y="140" text-anchor="end"
+                    transform="rotate(45 59, 140)">Swanbourne</text>
+                <use x="63" y="136" href="#wm" /><text x="62.25" y="136" text-anchor="end"
+                    transform="rotate(45 63, 136)">Claremont</text>
+                <use x="64" y="137" href="#wm" />
+                <use x="65" y="65" href="#wm" /><text x="64.25" y="65" text-anchor="end"
+                    transform="rotate(-45 65, 65)">Greenwood</text>
+                <use x="67" y="132" href="#wm" /><text x="66.25" y="132" text-anchor="end"
+                    transform="rotate(45 67, 132)">e Showgrounds</text>
+                <use x="68" y="133" href="#wm" />
+                <use x="71" y="71" href="#wm" /><text x="70.25" y="71" text-anchor="end"
+                    transform="rotate(-45 71, 71)">Warwick</text>
+                <use x="71" y="128" href="#wm" /><text x="70.25" y="128" text-anchor="end"
+                    transform="rotate(45 71, 128)">Loch Street</text>
+                <use x="72" y="129" href="#wm" />
+                <use x="75" y="124" href="#wm" /><text x="74.25" y="124" text-anchor="end"
+                    transform="rotate(45 75, 124)">Karrakatta</text>
+                <use x="76" y="125" href="#wm" />
+                <use x="77" y="77" href="#wm" /><text x="76.25" y="77" text-anchor="end"
+                    transform="rotate(-45 77, 77)">Stirling</text>
+                <use x="79" y="120" href="#wm" /><text x="78.25" y="120" text-anchor="end"
+                    transform="rotate(45 79, 120)">Shenton Park</text>
+                <use x="80" y="121" href="#wm" />
+                <use x="83" y="83" href="#wm" /><text x="82.25" y="83" text-anchor="end"
+                    transform="rotate(-45 83, 83)">Glendalough</text>
+                <use x="83" y="116" href="#wm" /><text x="82.25" y="116" text-anchor="end"
+                    transform="rotate(45 83, 116)">Daglish</text>
+                <use x="84" y="117" href="#wm" />
+                <use x="87" y="112" href="#wm" /><text x="86.25" y="112" text-anchor="end"
+                    transform="rotate(45 87, 112)">Subiaco</text>
+                <use x="88" y="113" href="#wm" />
+                <use x="89" y="89" href="#wm" /><text x="88.25" y="89" text-anchor="end"
+                    transform="rotate(-45 89, 89)">Leederville</text>
+                <use x="91" y="108" href="#wm" /><text x="90.25" y="108" text-anchor="end"
+                    transform="rotate(45 91, 108)">West Leederville</text>
+                <use x="92" y="109" href="#wm" />
+                <use x="94" y="24" href="#wm" /><text x="94.75" y="24">Airport Line</text>
+                <use x="94" y="26" href="#wm" /><text x="94.75" y="26">Armadale Line</text>
+                <use x="94" y="28" href="#wm" /><text x="94.75" y="28">Ellenbrook Line</text>
+                <use x="94" y="30" href="#wm" /><text x="94.75" y="30">Fremantle Line</text>
+                <use x="94" y="32" href="#wm" /><text x="94.75" y="32">Mandurah Line</text>
+                <use x="94" y="34" href="#wm" /><text x="94.75" y="34">Midland Line</text>
+                <use x="94" y="36" href="#wm" /><text x="94.75" y="36">Thornlie Cockburn Line</text>
+                <use x="94" y="38" href="#wm" /><text x="94.75" y="38">Yanchep Line</text>
+                <use x="95" y="104" href="#wm" /><text x="94.25" y="104" text-anchor="end"
+                    transform="rotate(45 95, 104)">City West</text>
+                <use x="96" y="105" href="#wm" />
+                <use x="101" y="96" href="#wm" /><text x="100.25" y="96" text-anchor="end"
+                    transform="rotate(45 101, 96)">Perth</text>
+                <use x="101" y="98" href="#wm" />
+                <use x="102" y="97" href="#wm" />
+                <use x="103" y="98" href="#wm" />
+                <use x="104" y="99" href="#wm" />
+                <use x="104" y="104" href="#wm" />
+                <use x="105" y="92" href="#wm" /><text x="104.25" y="92" text-anchor="end"
+                    transform="rotate(45 105, 92)">McIver</text>
+                <use x="105" y="100" href="#wm" />
+                <use x="105" y="105" href="#wm" /><text x="104.25" y="105" text-anchor="end"
+                    transform="rotate(-45 105, 105)">Perth Underground</text>
+                <use x="106" y="93" href="#wm" />
+                <use x="107" y="94" href="#wm" />
+                <use x="108" y="95" href="#wm" />
+                <use x="109" y="88" href="#wm" /><text x="108.25" y="88" text-anchor="end"
+                    transform="rotate(45 109, 88)">Claisebrook</text>
+                <use x="109" y="96" href="#wm" />
+                <use x="110" y="89" href="#wm" />
+                <use x="111" y="90" href="#wm" />
+                <use x="111" y="111" href="#wm" /><text x="110.25" y="111" text-anchor="end"
+                    transform="rotate(-45 111, 111)">Elizabeth Quay</text>
+                <use x="112" y="91" href="#wm" />
+                <use x="113" y="84" href="#wm" /><text x="112.25" y="84" text-anchor="end"
+                    transform="rotate(45 113, 84)">East Perth</text>
+                <use x="113" y="92" href="#wm" />
+                <use x="114" y="85" href="#wm" />
+                <use x="115" y="86" href="#wm" />
+                <use x="117" y="80" href="#wm" /><text x="116.25" y="80" text-anchor="end"
+                    transform="rotate(45 117, 80)">Mount Lawley</text>
+                <use x="117" y="117" href="#wm" /><text x="116.25" y="117" text-anchor="end"
+                    transform="rotate(-45 117, 117)">Canning Bridge</text>
+                <use x="118" y="81" href="#wm" />
+                <use x="119" y="82" href="#wm" />
+                <use x="121" y="76" href="#wm" /><text x="120.25" y="76" text-anchor="end"
+                    transform="rotate(45 121, 76)">Maylands</text>
+                <use x="122" y="77" href="#wm" />
+                <use x="123" y="78" href="#wm" />
+                <use x="123" y="123" href="#wm" /><text x="122.25" y="123" text-anchor="end"
+                    transform="rotate(-45 123, 123)">Bull Creek</text>
+                <use x="125" y="72" href="#wm" /><text x="124.25" y="72" text-anchor="end"
+                    transform="rotate(45 125, 72)">Meltham</text>
+                <use x="126" y="73" href="#wm" />
+                <use x="127" y="74" href="#wm" />
+                <use x="129" y="68" href="#wm" /><text x="128.25" y="68" text-anchor="end"
+                    transform="rotate(45 129, 68)">Bayswater</text>
+                <use x="129" y="129" href="#wm" /><text x="128.25" y="129" text-anchor="end"
+                    transform="rotate(-45 129, 129)">Murdoch</text>
+                <use x="130" y="69" href="#wm" />
+                <use x="131" y="70" href="#wm" />
+                <use x="132" y="39" href="#wm" /><text x="131.25" y="39" text-anchor="end">Ellenbrook</text>
+                <use x="132" y="44" href="#wm" /><text x="131.25" y="44" text-anchor="end">Whiteman Park</text>
+                <use x="132" y="49" href="#wm" /><text x="131.25" y="49" text-anchor="end">Ballajura</text>
+                <use x="132" y="54" href="#wm" /><text x="131.25" y="54" text-anchor="end">Noranda</text>
+                <use x="132" y="59" href="#wm" /><text x="131.25" y="59" text-anchor="end">Morley</text>
+                <use x="135" y="135" href="#wm" /><text x="134.25" y="135" text-anchor="end"
+                    transform="rotate(-45 135, 135)">Cockburn Central</text>
+                <use x="136" y="134" href="#wm" />
+                <use x="138" y="61" href="#wm" /><text x="137.25" y="61" text-anchor="end"
+                    transform="rotate(45 138, 61)">Ashfield</text>
+                <use x="139" y="91" href="#wm" />
+                <use x="139" y="131" href="#wm" /><text x="139.75" y="131" transform="rotate(45 139, 131)">Ranford
+                    Road</text>
+                <use x="140" y="90" href="#wm" /><text x="140.75" y="90" transform="rotate(-45 140, 90)">Perth
+                    Stadium</text>
+                <use x="141" y="141" href="#wm" /><text x="140.25" y="141" text-anchor="end"
+                    transform="rotate(-45 141, 141)">Aubin Grove</text>
+                <use x="142" y="57" href="#wm" /><text x="141.25" y="57" text-anchor="end"
+                    transform="rotate(45 142, 57)">Bassendean</text>
+                <use x="142" y="94" href="#wm" />
+                <use x="143" y="93" href="#wm" /><text x="143.75" y="93" transform="rotate(-45 143, 93)">Burswood</text>
+                <use x="145" y="69" href="#wm" /><text x="144.25" y="69" text-anchor="end"
+                    transform="rotate(-45 145, 69)">Redcliffe</text>
+                <use x="145" y="97" href="#wm" />
+                <use x="146" y="53" href="#wm" /><text x="145.25" y="53" text-anchor="end"
+                    transform="rotate(45 146, 53)">Success Hill</text>
+                <use x="146" y="96" href="#wm" /><text x="146.75" y="96" transform="rotate(-45 146, 96)">Victoria
+                    Park</text>
+                <use x="147" y="147" href="#wm" /><text x="146.25" y="147" text-anchor="end"
+                    transform="rotate(-45 147, 147)">Kwinana</text>
+                <use x="148" y="100" href="#wm" /><text x="148.75" y="100" transform="rotate(-45 148, 100)">s</text>
+                <use x="149" y="73" href="#wm" /><text x="148.25" y="73" text-anchor="end"
+                    transform="rotate(-45 149, 73)">Airport Central</text>
+                <use x="149" y="99" href="#wm" /><text x="149.75" y="99" transform="rotate(-45 149, 99)">Carlisle</text>
+                <use x="150" y="49" href="#wm" /><text x="149.25" y="49" text-anchor="end"
+                    transform="rotate(45 150, 49)">Guildford</text>
+                <use x="151" y="103" href="#wm" />
+                <use x="152" y="102" href="#wm" /><text x="152.75" y="102" transform="rotate(-45 152, 102)">Oats
+                    Street</text>
+                <use x="153" y="77" href="#wm" /><text x="152.25" y="77" text-anchor="end"
+                    transform="rotate(-45 153, 77)">High Wycombe</text>
+                <use x="153" y="153" href="#wm" /><text x="152.25" y="153" text-anchor="end"
+                    transform="rotate(-45 153, 153)">Wellard</text>
+                <use x="154" y="45" href="#wm" /><text x="153.25" y="45" text-anchor="end"
+                    transform="rotate(45 154, 45)">East Guildford</text>
+                <use x="154" y="106" href="#wm" />
+                <use x="154" y="125" href="#wm" /><text x="154.75" y="125" transform="rotate(45 154, 125)">Nicholson
+                    Road</text>
+                <use x="155" y="105" href="#wm" /><text x="155.75" y="105" transform="rotate(-45 155, 105)">Queens
+                    Park</text>
+                <use x="157" y="109" href="#wm" />
+                <use x="158" y="41" href="#wm" /><text x="157.25" y="41" text-anchor="end"
+                    transform="rotate(45 158, 41)">Woodbridge</text>
+                <use x="158" y="108" href="#wm" /><text x="158.75" y="108"
+                    transform="rotate(-45 158, 108)">Cannington</text>
+                <use x="159" y="120" href="#wm" /><text x="159.75" y="120"
+                    transform="rotate(45 159, 120)">Thornlie</text>
+                <use x="159" y="159" href="#wm" /><text x="158.25" y="159" text-anchor="end"
+                    transform="rotate(-45 159, 159)">Rockingham</text>
+                <use x="160" y="112" href="#wm" />
+                <use x="161" y="111" href="#wm" /><text x="161.75" y="111"
+                    transform="rotate(-45 161, 111)">Beckenham</text>
+                <use x="162" y="37" href="#wm" /><text x="161.25" y="37" text-anchor="end"
+                    transform="rotate(45 162, 37)">Midland</text>
+                <use x="165" y="165" href="#wm" /><text x="164.25" y="165" text-anchor="end"
+                    transform="rotate(-45 165, 165)">Warnbro</text>
+                <use x="168" y="118" href="#wm" /><text x="168.75" y="118"
+                    transform="rotate(-45 168, 118)">Kenwick</text>
+                <use x="171" y="121" href="#wm" /><text x="171.75" y="121"
+                    transform="rotate(-45 171, 121)">Maddington</text>
+                <use x="171" y="171" href="#wm" /><text x="170.25" y="171" text-anchor="end"
+                    transform="rotate(-45 171, 171)">Lakelands</text>
+                <use x="174" y="124" href="#wm" /><text x="174.75" y="124"
+                    transform="rotate(-45 174, 124)">Gosnells</text>
+                <use x="177" y="127" href="#wm" /><text x="177.75" y="127"
+                    transform="rotate(-45 177, 127)">Seaforth</text>
+                <use x="177" y="177" href="#wm" /><text x="176.25" y="177" text-anchor="end"
+                    transform="rotate(-45 177, 177)">Mandurah</text>
+                <use x="180" y="130" href="#wm" /><text x="180.75" y="130"
+                    transform="rotate(-45 180, 130)">Kelmscott</text>
+                <use x="183" y="133" href="#wm" /><text x="183.75" y="133"
+                    transform="rotate(-45 183, 133)">Challis</text>
+                <use x="186" y="136" href="#wm" /><text x="186.75" y="136"
+                    transform="rotate(-45 186, 136)">Sherwood</text>
+                <use x="189" y="139" href="#wm" /><text x="189.75" y="139"
+                    transform="rotate(-45 189, 139)">Armadale</text>
+                <use x="192" y="142" href="#wm" /><text x="192.75" y="142"
+                    transform="rotate(-45 192, 142)">Byford</text>
+
+                <!-- Trains layer -->
+                <g id="trains"></g>
+            </svg>
+        </div>
+
+        <div class="legend">
+            <div class="legend-title">Network Lines</div>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #669c35"></div>
+                    <span>Yanchep Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #1eafa3"></div>
+                    <span>Airport Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #0042aa"></div>
+                    <span>Fremantle Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #b5396b"></div>
+                    <span>Midland Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #e3711c"></div>
+                    <span>Mandurah Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #fdad00"></div>
+                    <span>Armadale Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #e32400"></div>
+                    <span>Ellenbrook Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background: #e392fe"></div>
+                    <span>Thornlie-Cockburn Line</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-rect" style="background: #333"></div>
+                    <span>Train (moving)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="train-info-popup" id="trainPopup" style="display: none;"></div>
+
+    <div class="debug-menu" id="debugMenu">
+        <h3>Debug Controls</h3>
+        <div class="debug-status">Time Control Active</div>
+
+        <div class="debug-time-display" id="debugTimeDisplay">--:--</div>
+
+        <div id="debugRange" class="debug-range"></div>
+        <div id="debugError" class="debug-error"></div>
+
+        <div class="debug-control-group">
+            <label>Set Specific Time:</label>
+            <input type="time" id="debugTimeInput" onchange="debugSetTime()">
+        </div>
+
+        <div class="debug-timeline">
+            <div class="debug-time-labels">
+                <span id="debugTimeStart">--:--</span>
+                <span id="debugTimeEnd">--:--</span>
+            </div>
+            <div class="debug-scrubber" id="debugScrubber"
+                style="height: 20px; background: #eee; position: relative; cursor: pointer; margin: 10px 0;">
+                <div class="debug-track" id="debugTrack"
+                    style="width: 100%; height: 4px; background: #ccc; position: absolute; top: 8px;">
+                    <div class="debug-track-filled" id="debugTrackFilled"
+                        style="width: 0%; height: 100%; background: #333;"></div>
+                </div>
+                <div class="debug-playhead" id="debugPlayhead"
+                    style="width: 12px; height: 12px; background: #333; border-radius: 50%; position: absolute; top: 4px; transform: translateX(-50%);">
+                </div>
+            </div>
+        </div>
+
+        <div class="debug-controls">
+            <div class="debug-buttons">
+                <button class="debug-btn" id="debugPlayBtn" onclick="togglePlay()">▶ Play</button>
+                <button class="debug-btn secondary" onclick="resetToNow()">Reset to Now</button>
+                <button class="debug-btn secondary" onclick="toggleDebugMenu()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Station coordinates mapping - extracted from SVG map
+        const stationCoordinates = {
+            // Yanchep Line
+            'Yanchep': { x: 11, y: 11 }, 'Yanchep Stn': { x: 11, y: 11 },
+            'Eglinton': { x: 17, y: 17 }, 'Eglinton Stn': { x: 17, y: 17 },
+            'Alkimos': { x: 23, y: 23 }, 'Alkimos Stn': { x: 23, y: 23 },
+            'Butler': { x: 29, y: 29 }, 'Butler Stn': { x: 29, y: 29 },
+            'Clarkson': { x: 35, y: 35 }, 'Clarkson Stn': { x: 35, y: 35 },
+            'Currambine': { x: 41, y: 41 }, 'Currambine Stn': { x: 41, y: 41 },
+            'Joondalup': { x: 47, y: 47 }, 'Joondalup Stn': { x: 47, y: 47 },
+            'Edgewater': { x: 53, y: 53 }, 'Edgewater Stn': { x: 53, y: 53 },
+            'Whitfords': { x: 59, y: 59 }, 'Whitfords Stn': { x: 59, y: 59 },
+            'Greenwood': { x: 65, y: 65 }, 'Greenwood Stn': { x: 65, y: 65 },
+            'Warwick': { x: 71, y: 71 }, 'Warwick Stn': { x: 71, y: 71 },
+            'Stirling': { x: 77, y: 77 }, 'Stirling Stn': { x: 77, y: 77 },
+            'Glendalough': { x: 83, y: 83 }, 'Glendalough Stn': { x: 83, y: 83 },
+            'Leederville': { x: 89, y: 89 }, 'Leederville Stn': { x: 89, y: 89 },
+
+            // Mandurah Line
+            'Mandurah': { x: 177, y: 177 }, 'Mandurah Stn': { x: 177, y: 177 },
+            'Lakelands': { x: 171, y: 171 }, 'Lakelands Stn': { x: 171, y: 171 },
+            'Warnbro': { x: 165, y: 165 }, 'Warnbro Stn': { x: 165, y: 165 },
+            'Rockingham': { x: 159, y: 159 }, 'Rockingham Stn': { x: 159, y: 159 },
+            'Kwinana': { x: 147, y: 147 }, 'Kwinana Stn': { x: 147, y: 147 },
+            'Wellard': { x: 153, y: 153 }, 'Wellard Stn': { x: 153, y: 153 },
+            'Aubin Grove': { x: 141, y: 141 }, 'Aubin Grove Stn': { x: 141, y: 141 },
+            'Success Hill': { x: 146, y: 53 }, 'Success Hill Stn': { x: 146, y: 53 },
+            'Cockburn Central': { x: 135, y: 135 }, 'Cockburn Central Stn': { x: 135, y: 135 },
+            'Murdoch': { x: 129, y: 129 }, 'Murdoch Stn': { x: 129, y: 129 },
+            'Bull Creek': { x: 123, y: 123 }, 'Bull Creek Stn': { x: 123, y: 123 },
+            'Canning Bridge': { x: 117, y: 117 }, 'Canning Bridge Stn': { x: 117, y: 117 },
+
+            // Fremantle Line
+            'Fremantle': { x: 35, y: 164 }, 'Fremantle Stn': { x: 35, y: 164 },
+            'North Fremantle': { x: 39, y: 160 }, 'North Fremantle Stn': { x: 39, y: 160 },
+            'Leighton': { x: 43, y: 156 }, 'Leighton Stn': { x: 43, y: 156 },
+            'Victoria Street': { x: 43, y: 156 }, 'Victoria Street Stn': { x: 43, y: 156 },
+            'Mosman Park': { x: 47, y: 152 }, 'Mosman Park Stn': { x: 47, y: 152 },
+            'Cottesloe': { x: 51, y: 148 }, 'Cottesloe Stn': { x: 51, y: 148 },
+            'Grant Street': { x: 55, y: 144 }, 'Grant Street Stn': { x: 55, y: 144 },
+            'Swanbourne': { x: 59, y: 140 }, 'Swanbourne Stn': { x: 59, y: 140 },
+            'Claremont': { x: 63, y: 136 }, 'Claremont Stn': { x: 63, y: 136 },
+            'Loch Street': { x: 71, y: 128 }, 'Loch Street Stn': { x: 71, y: 128 },
+            'Karrakatta': { x: 75, y: 124 }, 'Karrakatta Stn': { x: 75, y: 124 },
+            'Shenton Park': { x: 79, y: 120 }, 'Shenton Park Stn': { x: 79, y: 120 },
+            'Daglish': { x: 83, y: 116 }, 'Daglish Stn': { x: 83, y: 116 },
+            'Subiaco': { x: 87, y: 112 }, 'Subiaco Stn': { x: 87, y: 112 },
+            'West Leederville': { x: 91, y: 108 }, 'West Leederville Stn': { x: 91, y: 108 },
+            'City West': { x: 95, y: 104 }, 'City West Stn': { x: 95, y: 104 },
+
+            // Armadale Line
+            'Armadale': { x: 189, y: 139 }, 'Armadale Stn': { x: 189, y: 139 },
+            'Byford': { x: 192, y: 142 }, 'Byford Stn': { x: 192, y: 142 },
+            'Sherwood': { x: 186, y: 136 }, 'Sherwood Stn': { x: 186, y: 136 },
+            'Challis': { x: 183, y: 133 }, 'Challis Stn': { x: 183, y: 133 },
+            'Kelmscott': { x: 180, y: 130 }, 'Kelmscott Stn': { x: 180, y: 130 },
+            'Seaforth': { x: 177, y: 127 }, 'Seaforth Stn': { x: 177, y: 127 },
+            'Gosnells': { x: 174, y: 124 }, 'Gosnells Stn': { x: 174, y: 124 },
+            'Maddington': { x: 171, y: 121 }, 'Maddington Stn': { x: 171, y: 121 },
+            'Kenwick': { x: 168, y: 118 }, 'Kenwick Stn': { x: 168, y: 118 },
+            'Beckenham': { x: 161, y: 111 }, 'Beckenham Stn': { x: 161, y: 111 },
+            'Cannington': { x: 158, y: 108 }, 'Cannington Stn': { x: 158, y: 108 },
+            'Queens Park': { x: 155, y: 105 }, 'Queens Park Stn': { x: 155, y: 105 },
+            'Oats Street': { x: 152, y: 102 }, 'Oats Street Stn': { x: 152, y: 102 },
+            'Carlisle': { x: 149, y: 99 }, 'Carlisle Stn': { x: 149, y: 99 },
+            'Victoria Park': { x: 146, y: 96 }, 'Victoria Park Stn': { x: 146, y: 96 },
+            'Burswood': { x: 143, y: 93 }, 'Burswood Stn': { x: 143, y: 93 },
+            'Perth Stadium': { x: 140, y: 90 }, 'Perth Stadium Stn': { x: 140, y: 90 },
+
+            // Midland Line
+            'Midland': { x: 162, y: 37 }, 'Midland Stn': { x: 162, y: 37 },
+            'Woodbridge': { x: 158, y: 41 }, 'Woodbridge Stn': { x: 158, y: 41 },
+            'East Guildford': { x: 154, y: 45 }, 'East Guildford Stn': { x: 154, y: 45 },
+            'Guildford': { x: 150, y: 49 }, 'Guildford Stn': { x: 150, y: 49 },
+            'Bassendean': { x: 142, y: 57 }, 'Bassendean Stn': { x: 142, y: 57 },
+            'Ashfield': { x: 138, y: 61 }, 'Ashfield Stn': { x: 138, y: 61 },
+            'Bayswater': { x: 129, y: 68 }, 'Bayswater Stn': { x: 129, y: 68 },
+            'Meltham': { x: 125, y: 72 }, 'Meltham Stn': { x: 125, y: 72 },
+            'Maylands': { x: 121, y: 76 }, 'Maylands Stn': { x: 121, y: 76 },
+            'Mount Lawley': { x: 117, y: 80 }, 'Mount Lawley Stn': { x: 117, y: 80 },
+            'East Perth': { x: 113, y: 84 }, 'East Perth Stn': { x: 113, y: 84 },
+            'Claisebrook': { x: 109, y: 88 }, 'Claisebrook Stn': { x: 109, y: 88 },
+
+            // Ellenbrook Line
+            'Ellenbrook': { x: 132, y: 39 }, 'Ellenbrook Stn': { x: 132, y: 39 },
+            'Whiteman Park': { x: 132, y: 44 }, 'Whiteman Park Stn': { x: 132, y: 44 },
+            'Bennett Springs West': { x: 132, y: 49 }, 'Bennett Springs West Stn': { x: 132, y: 49 },
+            'Ballajura': { x: 132, y: 49 }, 'Ballajura Stn': { x: 132, y: 49 },
+            'Malaga': { x: 132, y: 54 }, 'Malaga Stn': { x: 132, y: 54 },
+            'Noranda': { x: 132, y: 54 }, 'Noranda Stn': { x: 132, y: 54 },
+            'Morley': { x: 132, y: 59 }, 'Morley Stn': { x: 132, y: 59 },
+
+            // Airport Line
+            'Airport': { x: 149, y: 73 }, 'Airport Stn': { x: 149, y: 73 },
+            'Airport Central': { x: 149, y: 73 }, 'Airport Central Stn': { x: 149, y: 73 },
+            'High Wycombe': { x: 153, y: 77 }, 'High Wycombe Stn': { x: 153, y: 77 },
+            'Redcliffe': { x: 145, y: 69 }, 'Redcliffe Stn': { x: 145, y: 69 },
+
+            // Thornlie-Cockburn Line
+            'Thornlie': { x: 159, y: 120 }, 'Thornlie Stn': { x: 159, y: 120 },
+            'Canning Vale': { x: 154, y: 125 }, 'Canning Vale Stn': { x: 154, y: 125 },
+            'Ranford Road': { x: 139, y: 131 }, 'Ranford Road Stn': { x: 139, y: 131 },
+            'Nicholson Road': { x: 154, y: 125 }, 'Nicholson Road Stn': { x: 154, y: 125 },
+
+            // Central/shared stations
+            'Perth Underground': { x: 105, y: 105 }, 'Perth Underground Stn': { x: 105, y: 105 },
+            'Elizabeth Quay': { x: 111, y: 111 }, 'Elizabeth Quay Stn': { x: 111, y: 111 },
+            'Perth': { x: 101, y: 96 }, 'Perth Stn': { x: 101, y: 96 },
+            'McIver': { x: 105, y: 92 }, 'McIver Stn': { x: 105, y: 92 },
+        };
+
+        // Line path definitions with waypoints for accurate train following
+        const linePaths = {
+            'Yanchep Line': {
+                // Simple diagonal path from north to city
+                segments: [
+                    { from: 'Yanchep', to: 'Eglinton', waypoints: [] },
+                    { from: 'Eglinton', to: 'Alkimos', waypoints: [] },
+                    { from: 'Alkimos', to: 'Butler', waypoints: [] },
+                    { from: 'Butler', to: 'Clarkson', waypoints: [] },
+                    { from: 'Clarkson', to: 'Currambine', waypoints: [] },
+                    { from: 'Currambine', to: 'Joondalup', waypoints: [] },
+                    { from: 'Joondalup', to: 'Edgewater', waypoints: [] },
+                    { from: 'Edgewater', to: 'Whitfords', waypoints: [] },
+                    { from: 'Whitfords', to: 'Greenwood', waypoints: [] },
+                    { from: 'Greenwood', to: 'Warwick', waypoints: [] },
+                    { from: 'Warwick', to: 'Stirling', waypoints: [] },
+                    { from: 'Stirling', to: 'Glendalough', waypoints: [] },
+                    { from: 'Glendalough', to: 'Leederville', waypoints: [] },
+                    { from: 'Leederville', to: 'Perth Underground', waypoints: [] },
+                    { from: 'Perth Underground', to: 'Elizabeth Quay', waypoints: [] }
+                ]
+            },
+            'Mandurah Line': {
+                // Simple diagonal path from south to city
+                segments: [
+                    { from: 'Mandurah', to: 'Lakelands', waypoints: [] },
+                    { from: 'Lakelands', to: 'Warnbro', waypoints: [] },
+                    { from: 'Warnbro', to: 'Rockingham', waypoints: [] },
+                    { from: 'Rockingham', to: 'Wellard', waypoints: [] },
+                    { from: 'Wellard', to: 'Kwinana', waypoints: [] },
+                    { from: 'Kwinana', to: 'Aubin Grove', waypoints: [] },
+                    { from: 'Aubin Grove', to: 'Cockburn Central', waypoints: [] },
+                    { from: 'Cockburn Central', to: 'Murdoch', waypoints: [] },
+                    { from: 'Murdoch', to: 'Bull Creek', waypoints: [] },
+                    { from: 'Bull Creek', to: 'Canning Bridge', waypoints: [] },
+                    { from: 'Canning Bridge', to: 'Elizabeth Quay', waypoints: [] },
+                    { from: 'Elizabeth Quay', to: 'Perth Underground', waypoints: [] }
+                ]
+            },
+            'Fremantle Line': {
+                // Diagonal path from southwest to city
+                segments: [
+                    { from: 'Fremantle', to: 'North Fremantle', waypoints: [] },
+                    { from: 'North Fremantle', to: 'Leighton', waypoints: [] },
+                    { from: 'Leighton', to: 'Cottesloe', waypoints: [] },
+                    { from: 'Cottesloe', to: 'Grant Street', waypoints: [] },
+                    { from: 'Grant Street', to: 'Swanbourne', waypoints: [] },
+                    { from: 'Swanbourne', to: 'Claremont', waypoints: [] },
+                    { from: 'Claremont', to: 'Loch Street', waypoints: [] },
+                    { from: 'Loch Street', to: 'Karrakatta', waypoints: [] },
+                    { from: 'Karrakatta', to: 'Shenton Park', waypoints: [] },
+                    { from: 'Shenton Park', to: 'Daglish', waypoints: [] },
+                    { from: 'Daglish', to: 'Subiaco', waypoints: [] },
+                    { from: 'Subiaco', to: 'West Leederville', waypoints: [] },
+                    { from: 'West Leederville', to: 'City West', waypoints: [] },
+                    { from: 'City West', to: 'Perth Underground', waypoints: [] },
+                    { from: 'Perth Underground', to: 'McIver', waypoints: [] }
+                ]
+            },
+            'Midland Line': {
+                // Diagonal path from northeast to city - stays on dedicated Midland tracks
+                segments: [
+                    { from: 'Midland', to: 'Woodbridge', waypoints: [] },
+                    { from: 'Woodbridge', to: 'Guildford', waypoints: [] },
+                    { from: 'Guildford', to: 'Bassendean', waypoints: [] },
+                    { from: 'Bassendean', to: 'Ashfield', waypoints: [] },
+                    { from: 'Ashfield', to: 'Bayswater', waypoints: [] },
+                    { from: 'Bayswater', to: 'Meltham', waypoints: [{x: 102, y: 97}] },
+                    { from: 'Meltham', to: 'Maylands', waypoints: [] },
+                    { from: 'Maylands', to: 'Mount Lawley', waypoints: [] },
+                    { from: 'Mount Lawley', to: 'East Perth', waypoints: [] },
+                    { from: 'East Perth', to: 'Claisebrook', waypoints: [] },
+                    { from: 'Claisebrook', to: 'Perth Underground', waypoints: [] },
+                    { from: 'Perth Underground', to: 'McIver', waypoints: [] }
+                ]
+            },
+            'Armadale Line': {
+                // Path with bends through eastern suburbs
+                segments: [
+                    { from: 'Armadale', to: 'Sherwood', waypoints: [] },
+                    { from: 'Sherwood', to: 'Challis', waypoints: [] },
+                    { from: 'Challis', to: 'Kelmscott', waypoints: [] },
+                    { from: 'Kelmscott', to: 'Seaforth', waypoints: [] },
+                    { from: 'Seaforth', to: 'Gosnells', waypoints: [] },
+                    { from: 'Gosnells', to: 'Maddington', waypoints: [] },
+                    { from: 'Maddington', to: 'Beckenham', waypoints: [] },
+                    { from: 'Beckenham', to: 'Cannington', waypoints: [] },
+                    { from: 'Cannington', to: 'Queens Park', waypoints: [] },
+                    { from: 'Queens Park', to: 'Carlisle', waypoints: [] },
+                    { from: 'Carlisle', to: 'Victoria Park', waypoints: [] },
+                    { from: 'Victoria Park', to: 'Burswood', waypoints: [] },
+                    { from: 'Burswood', to: 'Perth Underground', waypoints: [{x: 115, y: 88}] },
+                    { from: 'Perth Underground', to: 'McIver', waypoints: [] }
+                ]
+            },
+            'Ellenbrook Line': {
+                // Vertical then diagonal path - joins Midland line at Bayswater
+                segments: [
+                    { from: 'Ellenbrook', to: 'Whiteman Park', waypoints: [] },
+                    { from: 'Whiteman Park', to: 'Malaga', waypoints: [] },
+                    { from: 'Malaga', to: 'Noranda', waypoints: [] },
+                    { from: 'Noranda', to: 'Morley', waypoints: [] },
+                    { from: 'Morley', to: 'Bayswater', waypoints: [{x: 132, y: 65}, {x: 101, y: 96}] }
+                ]
+            },
+            'Airport Line': {
+                // Complex path with bends at Bayswater junction
+                segments: [
+                    { from: 'Airport Central', to: 'High Wycombe', waypoints: [] },
+                    { from: 'High Wycombe', to: 'Redcliffe', waypoints: [{x: 143, y: 67}] },
+                    { from: 'Redcliffe', to: 'Ashfield', waypoints: [{x: 134, y: 67}] },
+                    { from: 'Ashfield', to: 'Bayswater', waypoints: [] }
+                ]
+            },
+            'Thornlie-Cockburn Line': {
+                // Complex routing with multiple waypoints
+                segments: [
+                    { from: 'Thornlie', to: 'Nicholson Road', waypoints: [{x: 151, y: 128}] },
+                    { from: 'Nicholson Road', to: 'Ranford Road', waypoints: [{x: 162, y: 117}, {x: 162, y: 114}, {x: 142, y: 128}] },
+                    { from: 'Ranford Road', to: 'Cockburn Central', waypoints: [{x: 137, y: 89}, {x: 116, y: 89}] }
+                ]
+            }
+        };
+
+        // Line colors
+        const lineColors = {
+            'Yanchep Line': '#669c35',
+            'Airport Line': '#1eafa3',
+            'Fremantle Line': '#0042aa',
+            'Midland Line': '#b5396b',
+            'Mandurah Line': '#e3711c',
+            'Armadale Line': '#fdad00',
+            'Ellenbrook Line': '#e32400',
+            'Thornlie-Cockburn Line': '#e392fe'
+        };
+
+        // Cars per unit type
+        const carsPerUnit = {
+            'A': 2,
+            'B': 3,
+            'C': 6
+        };
+
+        // Global state variables
+        let trainData = null;
+        let stationOrder = [];
+        let debugMode = false;
+        let frozenTime = 0; // Absolute timestamp (ms) when debug mode is enabled or time is set
+        let playbackStartTime = 0; // performance.now() timestamp when playback starts
+        let accumulatedPlaybackTime = 0; // Total simulated time elapsed during all playback sessions (ms)
+        let isPlaying = false;
+        let validTimeRange = { min: null, max: null };
+        let favoriteStation = null;
+        let playbackSpeed = 5; // 5x speed
+
+        // Konami code for debug mode
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'];
+        let konamiIndex = 0;
+        let isDragging = false;
+        let scrubberSetup = false;
+
+        // Konami code detection
+        document.addEventListener('keydown', function (e) {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    toggleDebugMenu();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        function toggleDebugMenu() {
+            debugMode = !debugMode;
+            const menu = document.getElementById('debugMenu');
+            menu.classList.toggle('active');
+
+            if (debugMode) {
+                // Freeze time at the current moment as ABSOLUTE timestamp
+                frozenTime = new Date().getTime();
+                accumulatedPlaybackTime = 0;
+                isPlaying = false;
+                updateDebugDisplay();
+                updateTimeInputLimits();
+                updatePlayButton();
+            } else {
+                // Return to real time
+                frozenTime = 0;
+                accumulatedPlaybackTime = 0;
+                isPlaying = false;
+            }
+        }
+
+        function updateTimeInputLimits() {
+            if (!validTimeRange.min || !validTimeRange.max) return;
+
+            const input = document.getElementById('debugTimeInput');
+            const minStr = `${validTimeRange.min.getHours().toString().padStart(2, '0')}:${validTimeRange.min.getMinutes().toString().padStart(2, '0')}`;
+            const maxStr = `${validTimeRange.max.getHours().toString().padStart(2, '0')}:${validTimeRange.max.getMinutes().toString().padStart(2, '0')}`;
+
+            input.setAttribute('min', minStr);
+            input.setAttribute('max', maxStr);
+
+            // Update timeline labels with 12hr format
+            const startLabel = document.getElementById('debugTimeStart');
+            const endLabel = document.getElementById('debugTimeEnd');
+            if (startLabel) startLabel.textContent = formatTime12Hr(validTimeRange.min);
+            if (endLabel) endLabel.textContent = formatTime12Hr(validTimeRange.max);
+        }
+
+        function debugSetTime() {
+            const input = document.getElementById('debugTimeInput');
+            if (!input.value) return;
+
+            const [hours, minutes] = input.value.split(':').map(Number);
+            const targetTime = new Date();
+            targetTime.setHours(hours, minutes, 0, 0);
+
+            if (!isTimeInValidRange(targetTime)) {
+                const minStr = formatTime12Hr(validTimeRange.min);
+                const maxStr = formatTime12Hr(validTimeRange.max);
+                showDebugError(`Time must be between ${minStr} and ${maxStr}`);
+                return;
+            }
+
+            // Set frozen time to the target time
+            frozenTime = targetTime.getTime();
+            accumulatedPlaybackTime = 0;
+            if (isPlaying) {
+                playbackStartTime = performance.now();
+            }
+            updateDebugDisplay();
+        }
+
+        function debugAdjustTime(minutes) {
+            const testTime = getCurrentTime();
+            testTime.setMinutes(testTime.getMinutes() + minutes);
+
+            if (!isTimeInValidRange(testTime)) {
+                showDebugError('Adjustment would exceed valid time range');
+                return;
+            }
+
+            debugTimeOffset += minutes;
+            updateDebugDisplay();
+        }
+
+        function debugResetTime() {
+            debugTimeOffset = 0;
+            updateDebugDisplay();
+        }
+
+        function updateDebugDisplay() {
+            const displayTime = getCurrentTime();
+            const hours24 = displayTime.getHours();
+            const minutes = displayTime.getMinutes();
+            const seconds = displayTime.getSeconds();
+
+            // Format for 12-hour display with seconds
+            const period = hours24 >= 12 ? 'PM' : 'AM';
+            const hours12 = hours24 % 12 || 12;
+            const timeStr = `${hours12}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${period}`;
+
+            // Show time with seconds for smooth display in 12hr format
+            document.getElementById('debugTimeDisplay').textContent = timeStr;
+
+            if (debugMode) {
+                // Update input (still uses 24hr for the input field)
+                const hours24Str = hours24.toString().padStart(2, '0');
+                const minutesStr = minutes.toString().padStart(2, '0');
+                document.getElementById('debugTimeInput').value = `${hours24Str}:${minutesStr}`;
+
+                // Update slider position
+                updateSliderPosition();
+            }
+        }
+
+        function updateSliderPosition() {
+            if (!validTimeRange.min || !validTimeRange.max) return;
+
+            const currentTime = getCurrentTime();
+            const totalMs = validTimeRange.max.getTime() - validTimeRange.min.getTime();
+            const currentMs = currentTime.getTime() - validTimeRange.min.getTime();
+            const percentage = Math.max(0, Math.min(1, currentMs / totalMs));
+
+            const playhead = document.getElementById('debugPlayhead');
+            const trackFilled = document.getElementById('debugTrackFilled');
+
+            if (playhead) {
+                playhead.style.left = `${percentage * 100}%`;
+            }
+            if (trackFilled) {
+                trackFilled.style.width = `${percentage * 100}%`;
+            }
+        }
+
+        function getCurrentTime() {
+            if (debugMode) {
+                if (isPlaying) {
+                    // Calculate elapsed real time since play started
+                    const now = performance.now();
+                    const realElapsed = now - playbackStartTime;
+                    const simulatedElapsed = realElapsed * playbackSpeed;
+                    // Return frozen time + accumulated + current playback elapsed
+                    return new Date(frozenTime + accumulatedPlaybackTime + simulatedElapsed);
+                } else {
+                    // Paused: return frozen time + any accumulated playback time
+                    return new Date(frozenTime + accumulatedPlaybackTime);
+                }
+            }
+            return new Date(); // Live mode
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch('live_train_map.json');
+                if (!response.ok) throw new Error('Could not load data');
+                trainData = await response.json();
+
+                // Transform train-centric format to station-centric for compatibility
+                if (trainData.trains) {
+                    const stations = {};
+
+                    // Rebuild stations object from trains
+                    for (const [trainId, train] of Object.entries(trainData.trains)) {
+                        for (const stop of train.stops) {
+                            const stationName = stop.station;
+
+                            // Initialize station if not exists
+                            if (!stations[stationName]) {
+                                stations[stationName] = { StatusDetailList: [] };
+                            }
+
+                            // Add train to this station
+                            stations[stationName].StatusDetailList.push({
+                                TrainID: train.id,
+                                TripId: train.id,  // Also support old field name
+                                LineName: train.line,
+                                Destination: train.destination,
+                                Departure: stop.time,
+                                Platform: train.platform,
+                                Ncar: train.ncar,
+                                Series: train.series,
+                                StatusDetail: train.status
+                            });
+                        }
+                    }
+
+                    trainData.stations = stations;
+                }
+                // Transform multi-line structure to flat structure for compatibility
+                else if (trainData.lines) {
+                    // Old multi-line format: merge all lines' stations into single object
+                    const mergedStations = {};
+                    for (const [lineName, lineData] of Object.entries(trainData.lines)) {
+                        Object.assign(mergedStations, lineData.stations);
+                    }
+                    trainData.stations = mergedStations;
+                }
+                // Otherwise: keep existing trainData.stations for backward compatibility
+
+                const lineNameEl = document.getElementById('lineName');
+                const timestampEl = document.getElementById('timestamp');
+
+                if (lineNameEl) lineNameEl.textContent = trainData.line || 'Transperth Network';
+                if (timestampEl) timestampEl.textContent = `Data from ${trainData.timestamp}`;
+
+                stationOrder = Object.keys(trainData.stations);
+                calculateValidTimeRange();
+                loadFavoriteStation();
+
+                // Main animation loop - runs at ~20fps for smooth motion
+                setInterval(() => {
+                    // Check if we've reached the end of valid range while playing
+                    if (debugMode && isPlaying) {
+                        const currentTime = getCurrentTime();
+                        if (currentTime >= validTimeRange.max) {
+                            // Stop at the end - accumulate current playback and pause
+                            const now = performance.now();
+                            const realElapsed = now - playbackStartTime;
+                            const simulatedElapsed = realElapsed * playbackSpeed;
+                            accumulatedPlaybackTime += simulatedElapsed;
+                            isPlaying = false;
+                            updatePlayButton();
+                        }
+                    }
+
+                    // Run updates every 50ms for smooth visual motion
+                    updateTrains();
+                    updateFavoriteStation();
+                    if (debugMode) {
+                        updateDebugDisplay();
+                    }
+                }, 50); // 50ms interval for smooth 20fps animation
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        function loadFavoriteStation() {
+            try {
+                const saved = localStorage.getItem('favoriteStation');
+                if (saved && stationOrder.includes(saved)) {
+                    favoriteStation = saved;
+                }
+            } catch (e) {
+                console.error('Error loading favorite station:', e);
+            }
+            renderFavoriteStation();
+        }
+
+        function saveFavoriteStation(station) {
+            try {
+                localStorage.setItem('favoriteStation', station);
+                favoriteStation = station;
+                renderFavoriteStation();
+            } catch (e) {
+                console.error('Error saving favorite station:', e);
+            }
+        }
+
+        function clearFavoriteStation() {
+            try {
+                localStorage.removeItem('favoriteStation');
+                favoriteStation = null;
+                renderFavoriteStation();
+            } catch (e) {
+                console.error('Error clearing favorite station:', e);
+            }
+        }
+
+        function renderFavoriteStation() {
+            const container = document.getElementById('favoriteContent');
+
+            if (!favoriteStation) {
+                container.innerHTML = `
+            <div class="favorite-setup">
+                <h4>Favorite Station</h4>
+                <select id="favoriteStationSelect">
+                    <option value="">Select a station...</option>
+                    ${stationOrder.map(s => `<option value="${s}">${s}</option>`).join('')}
+                </select>
+                <button onclick="setFavoriteFromSelect()">Set Favorite</button>
+            </div>
+        `;
+            } else {
+                container.innerHTML = `
+            <h4>
+                <span>Next Trains</span>
+                <span class="favorite-change" onclick="clearFavoriteStation()">change</span>
+            </h4>
+            <div class="favorite-station-name">${favoriteStation}</div>
+            <div class="favorite-trains" id="favoriteTrainsList"></div>
+        `;
+                updateFavoriteStation();
+            }
+        }
+
+        function setFavoriteFromSelect() {
+            const select = document.getElementById('favoriteStationSelect');
+            if (select.value) {
+                saveFavoriteStation(select.value);
+            }
+        }
+
+        function updateFavoriteStation() {
+            if (!favoriteStation || !trainData) return;
+
+            const stationData = trainData.stations[favoriteStation];
+            if (!stationData || !stationData.StatusDetailList) return;
+
+            const currentTime = getCurrentTime();
+
+            // Get all upcoming trains
+            const upcomingTrains = stationData.StatusDetailList
+                .map(train => {
+                    const departureTime = parseTime(train.Departure);
+                    const minutesUntil = (departureTime - currentTime) / 1000 / 60;
+                    return { ...train, minutesUntil, departureTime };
+                })
+                .filter(train => train.minutesUntil >= -1) // Include trains up to 1 min past
+                .sort((a, b) => a.minutesUntil - b.minutesUntil)
+                .slice(0, 3);
+
+            const listContainer = document.getElementById('favoriteTrainsList');
+            if (!listContainer) return;
+
+            if (upcomingTrains.length === 0) {
+                listContainer.innerHTML = '<div class="favorite-no-trains">No upcoming trains</div>';
+                return;
+            }
+
+            listContainer.innerHTML = upcomingTrains.map(train => {
+                const mins = Math.round(train.minutesUntil);
+                let countdownText = '';
+                let countdownClass = '';
+
+                if (mins < 0) {
+                    countdownText = 'Departing';
+                    countdownClass = 'departing';
+                } else if (mins === 0) {
+                    countdownText = 'Now';
+                    countdownClass = 'departing';
+                } else if (mins === 1) {
+                    countdownText = '1 min';
+                    countdownClass = 'soon';
+                } else if (mins <= 5) {
+                    countdownText = `${mins} mins`;
+                    countdownClass = 'soon';
+                } else {
+                    countdownText = `${mins} mins`;
+                }
+
+                return `
+            <div class="favorite-train" style="border-left-color: ${lineColors[train.LineName] || '#333'}">
+                <div class="favorite-train-info">
+                    <div class="favorite-train-time">${formatTime12Hr(train.Departure)}</div>
+                    <div class="favorite-train-dest">to ${train.Destination} • Platform ${train.Platform}</div>
+                </div>
+                <div class="favorite-train-countdown ${countdownClass}">${countdownText}</div>
+            </div>
+        `;
+            }).join('');
+        }
+
+        function calculateValidTimeRange() {
+            let minTime = null;
+            let maxTime = null;
+
+            Object.values(trainData.stations).forEach(stationData => {
+                if (!stationData || !stationData.StatusDetailList) return;
+
+                stationData.StatusDetailList.forEach(train => {
+                    const time = parseTime(train.Departure);
+                    if (!minTime || time < minTime) minTime = time;
+                    if (!maxTime || time > maxTime) maxTime = time;
+                });
+            });
+
+            if (minTime && maxTime) {
+                // Add buffer: 30 min before first train, 30 min after last train
+                minTime.setMinutes(minTime.getMinutes() - 30);
+                maxTime.setMinutes(maxTime.getMinutes() + 30);
+
+                validTimeRange.min = minTime;
+                validTimeRange.max = maxTime;
+
+                const minStr = formatTime12Hr(minTime);
+                const maxStr = formatTime12Hr(maxTime);
+
+                document.getElementById('debugRange').textContent = `Valid range: ${minStr} - ${maxStr}`;
+            }
+        }
+
+        function isTimeInValidRange(time) {
+            if (!validTimeRange.min || !validTimeRange.max) return true;
+
+            const timeToCheck = new Date(time);
+            const checkHours = timeToCheck.getHours();
+            const checkMinutes = timeToCheck.getMinutes();
+
+            const minHours = validTimeRange.min.getHours();
+            const minMinutes = validTimeRange.min.getMinutes();
+            const maxHours = validTimeRange.max.getHours();
+            const maxMinutes = validTimeRange.max.getMinutes();
+
+            const checkTotalMinutes = checkHours * 60 + checkMinutes;
+            const minTotalMinutes = minHours * 60 + minMinutes;
+            const maxTotalMinutes = maxHours * 60 + maxMinutes;
+
+            return checkTotalMinutes >= minTotalMinutes && checkTotalMinutes <= maxTotalMinutes;
+        }
+
+        function showDebugError(message) {
+            const errorEl = document.getElementById('debugError');
+            errorEl.textContent = message;
+            errorEl.classList.add('show');
+            setTimeout(() => {
+                errorEl.classList.remove('show');
+            }, 3000);
+        }
+
+        // Convert 24hr time string (HH:MM) or Date object to 12hr format
+        function formatTime12Hr(time) {
+            let hours, minutes;
+
+            if (typeof time === 'string') {
+                // Parse from "HH:MM" string
+                [hours, minutes] = time.split(':').map(Number);
+            } else if (time instanceof Date) {
+                // Extract from Date object
+                hours = time.getHours();
+                minutes = time.getMinutes();
+            } else {
+                return time; // Return as-is if unrecognized format
+            }
+
+            const period = hours >= 12 ? 'PM' : 'AM';
+            const hours12 = hours % 12 || 12; // Convert 0 to 12
+            const minutesStr = minutes.toString().padStart(2, '0');
+
+            return `${hours12}:${minutesStr} ${period}`;
+        }
+
+        function parseTime(timeStr) {
+            const [hours, minutes] = timeStr.split(':').map(Number);
+            const now = new Date();
+            const time = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes);
+            return time;
+        }
+
+        // NEW: Get all scheduled stops for a train
+        function getAllTrainStops(tripId) {
+            // Find all scheduled stops for this train across all stations
+            const stops = [];
+
+            Object.entries(trainData.stations).forEach(([stationName, stationData]) => {
+                if (!stationData || !stationData.StatusDetailList) return;
+
+                const matchingTrain = stationData.StatusDetailList.find(t => t.TripId === tripId);
+                if (matchingTrain) {
+                    stops.push({
+                        station: stationName,
+                        time: parseTime(matchingTrain.Departure),
+                        departure: matchingTrain.Departure,
+                        destination: matchingTrain.Destination
+                    });
+                }
+            });
+
+            // Sort by time
+            stops.sort((a, b) => a.time - b.time);
+            return stops;
+        }
+
+        // UPDATED: Calculate train position with smooth interpolation and centered station stops
+        // Helper: Interpolate position along a multi-waypoint path segment
+        function interpolateAlongSegment(pathSegment, progress) {
+            // Build full point sequence: [start, ...waypoints, end]
+            const fromCoords = getStationCoords(pathSegment.from);
+            const toCoords = getStationCoords(pathSegment.to);
+
+            if (!fromCoords || !toCoords) {
+                return null; // Fallback if coordinates missing
+            }
+
+            const points = [
+                fromCoords,
+                ...pathSegment.waypoints,
+                toCoords
+            ];
+
+            // If only two points (no waypoints), use simple linear interpolation
+            if (points.length === 2) {
+                const dx = points[1].x - points[0].x;
+                const dy = points[1].y - points[0].y;
+                const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+                return {
+                    x: points[0].x + dx * progress,
+                    y: points[0].y + dy * progress,
+                    angle: angle
+                };
+            }
+
+            // Calculate cumulative distances along path
+            const distances = [0];
+            let totalDistance = 0;
+
+            for (let i = 1; i < points.length; i++) {
+                const dist = Math.sqrt(
+                    Math.pow(points[i].x - points[i-1].x, 2) +
+                    Math.pow(points[i].y - points[i-1].y, 2)
+                );
+                totalDistance += dist;
+                distances.push(totalDistance);
+            }
+
+            // Find which sub-segment the train is on
+            const targetDist = progress * totalDistance;
+
+            for (let i = 1; i < points.length; i++) {
+                if (targetDist <= distances[i]) {
+                    const segStart = distances[i-1];
+                    const segLen = distances[i] - segStart;
+                    const localProgress = segLen > 0 ? (targetDist - segStart) / segLen : 0;
+
+                    // Calculate position and angle based on current sub-segment
+                    const dx = points[i].x - points[i-1].x;
+                    const dy = points[i].y - points[i-1].y;
+                    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+                    return {
+                        x: points[i-1].x + dx * localProgress,
+                        y: points[i-1].y + dy * localProgress,
+                        angle: angle
+                    };
+                }
+            }
+
+            // Fallback to end point with angle from last segment
+            const lastIdx = points.length - 1;
+            const dx = points[lastIdx].x - points[lastIdx-1].x;
+            const dy = points[lastIdx].y - points[lastIdx-1].y;
+            const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+            return {
+                ...points[lastIdx],
+                angle: angle
+            };
+        }
+
+        // Helper: Find the path segment for a train moving between two stations
+        function findPathSegment(lineName, fromStation, toStation) {
+            const linePath = linePaths[lineName];
+
+            // Fallback if line not defined: use direct path
+            if (!linePath) {
+                return { from: fromStation, to: toStation, waypoints: [] };
+            }
+
+            // Try to find forward direction segment
+            let segment = linePath.segments.find(s =>
+                s.from === fromStation && s.to === toStation
+            );
+            if (segment) return segment;
+
+            // Try reverse direction
+            segment = linePath.segments.find(s =>
+                s.from === toStation && s.to === fromStation
+            );
+            if (segment) {
+                // Return reversed segment
+                return {
+                    from: fromStation,
+                    to: toStation,
+                    waypoints: [...segment.waypoints].reverse()
+                };
+            }
+
+            // Fallback: direct path with no waypoints
+            return { from: fromStation, to: toStation, waypoints: [] };
+        }
+
+        function calculateTrainPosition(train, currentTime) {
+            // Get all stops for this train
+            const allStops = getAllTrainStops(train.TripId);
+            if (allStops.length === 0) return null;
+
+            // Find where we are in the journey
+            let prevStop = null;
+            let nextStop = null;
+
+            for (let i = 0; i < allStops.length; i++) {
+                if (currentTime < allStops[i].time) {
+                    nextStop = allStops[i];
+                    prevStop = i > 0 ? allStops[i - 1] : null;
+                    break;
+                }
+            }
+
+            // If before first stop, show at first station
+            if (!prevStop && nextStop) {
+                const timeToDeparture = (nextStop.time - currentTime) / 1000 / 60;
+                // Only show train up to 10 minutes before departure
+                if (timeToDeparture <= 10) {
+                    const position = getStationCoords(nextStop.station);
+                    // Calculate opacity based on time to departure
+                    const opacity = calculateTrainOpacity(timeToDeparture, 10, true);
+                    return { ...position, opacity };
+                }
+                return null;
+            }
+
+            // If after last stop, don't show the train
+            if (!nextStop) {
+                if (allStops.length > 0) {
+                    const lastStop = allStops[allStops.length - 1];
+                    const timeSinceLast = (currentTime - lastStop.time) / 1000 / 60;
+                    // Show for up to 2 minutes after last stop
+                    if (timeSinceLast <= 2) {
+                        const position = getStationCoords(lastStop.station);
+                        // Fade out gradually after arrival
+                        const opacity = Math.max(0, 1 - (timeSinceLast / 2));
+                        return { ...position, opacity };
+                    }
+                }
+                return null;
+            }
+
+            // Interpolate between prevStop and nextStop
+            if (prevStop && nextStop) {
+                const totalTime = (nextStop.time - prevStop.time) / 1000 / 60; // in minutes
+                const elapsedTime = (currentTime - prevStop.time) / 1000 / 60;
+
+                // Calculate raw progress (0 to 1)
+                let progress = totalTime > 0 ? Math.min(Math.max(elapsedTime / totalTime, 0), 1) : 0;
+
+                // Add dwell time at stations
+                const dwellRatio = 0.15; // Train sits for 15% of journey time at departure station
+
+                if (progress < dwellRatio) {
+                    // Dwelling at previous station - return exact station coordinates
+                    const position = getStationCoords(prevStop.station);
+                    // Fade out if dwelling for too long
+                    const dwellTimeMinutes = elapsedTime;
+                    const opacity = calculateTrainOpacity(dwellTimeMinutes, totalTime * dwellRatio, false);
+
+                    // Calculate angle for the upcoming segment
+                    const pathSegment = findPathSegment(
+                        train.LineName,
+                        prevStop.station,
+                        nextStop.station
+                    );
+                    const segmentStart = interpolateAlongSegment(pathSegment, 0);
+                    const angle = segmentStart ? segmentStart.angle : 0;
+
+                    return { ...position, opacity, angle };
+                } else {
+                    // Moving between stations
+                    // Adjust progress to account for dwell time
+                    const adjustedProgress = (progress - dwellRatio) / (1 - dwellRatio);
+
+                    // Get the path segment for this line
+                    const pathSegment = findPathSegment(
+                        train.LineName,
+                        prevStop.station,
+                        nextStop.station
+                    );
+
+                    // Interpolate along the path (with waypoints if defined)
+                    const position = interpolateAlongSegment(pathSegment, adjustedProgress);
+
+                    if (position) {
+                        // If very close to next station (within last 1% of journey), snap to it
+                        if (adjustedProgress >= 0.99) {
+                            const nextPos = getStationCoords(nextStop.station);
+                            return { ...nextPos, opacity: 1, angle: position.angle };
+                        }
+
+                        return {
+                            x: position.x,
+                            y: position.y,
+                            opacity: 1,
+                            angle: position.angle
+                        };
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        // Calculate opacity for trains sitting at stations
+        function calculateTrainOpacity(timeMinutes, totalTime, isBeforeDeparture) {
+            if (isBeforeDeparture) {
+                // Before first departure: fade in when < 5 minutes away
+                if (timeMinutes <= 2) {
+                    return 1; // Fully visible in last 2 minutes
+                } else if (timeMinutes <= 5) {
+                    // Fade in from 0 to 1 between 5 and 2 minutes
+                    return (5 - timeMinutes) / 3;
+                } else {
+                    return 0; // Invisible if more than 5 minutes away
+                }
+            } else {
+                // During dwell: fade out if dwelling too long
+                if (totalTime > 5) {
+                    // For long dwells, fade out after 2 minutes and fade back in during last 1 minute
+                    const fadeOutStart = 2;
+                    const fadeInStart = totalTime - 1;
+                    
+                    if (timeMinutes < fadeOutStart) {
+                        return 1; // Visible for first 2 minutes
+                    } else if (timeMinutes < fadeOutStart + 1) {
+                        // Fade out over 1 minute
+                        return 1 - (timeMinutes - fadeOutStart);
+                    } else if (timeMinutes < fadeInStart) {
+                        return 0; // Invisible during middle of long dwell
+                    } else {
+                        // Fade back in during last minute
+                        return (timeMinutes - fadeInStart);
+                    }
+                } else {
+                    return 1; // Always visible for short dwells
+                }
+            }
+        }
+
+        // UPDATED: Update trains with DOM element reuse
+        function updateTrains() {
+            if (!trainData || !trainData.stations) return;
+
+            const currentTime = getCurrentTime();
+            const trainsGroup = document.getElementById('trains');
+
+            // Collect all unique trains (by TripId)
+            const uniqueTrains = new Map();
+
+            Object.entries(trainData.stations).forEach(([stationName, stationData]) => {
+                if (!stationData || !stationData.StatusDetailList) return;
+
+                stationData.StatusDetailList.forEach(train => {
+                    // Skip trains with invalid TripId
+                    if (!train.TripId || train.TripId < 0) return;
+
+                    // Store the first occurrence of each train we find
+                    if (!uniqueTrains.has(train.TripId)) {
+                        uniqueTrains.set(train.TripId, {
+                            ...train,
+                            station: stationName
+                        });
+                    }
+                });
+            });
+
+            // Get existing train elements
+            const existingTrains = new Map();
+            trainsGroup.querySelectorAll('.train-marker').forEach(el => {
+                const id = el.getAttribute('data-train-id');
+                if (id) existingTrains.set(id, el);
+            });
+
+            // Update or create trains
+            uniqueTrains.forEach((train, tripId) => {
+                const position = calculateTrainPosition(train, currentTime);
+
+                // Remove train if no position
+                if (!position) {
+                    const existing = existingTrains.get(String(tripId));
+                    if (existing) existing.remove();
+                    return;
+                }
+
+                // Use angle from position calculation (from path tangent)
+                let angle = position.angle !== undefined ? position.angle : 0;
+
+                // Update existing train or create new one
+                let trainGroup = existingTrains.get(String(tripId));
+
+                if (trainGroup) {
+                    // Update position of existing train smoothly
+                    trainGroup.setAttribute('transform', `translate(${position.x}, ${position.y}) rotate(${angle})`);
+                    // Update opacity with smooth transition
+                    trainGroup.style.opacity = position.opacity !== undefined ? position.opacity : 1;
+                    existingTrains.delete(String(tripId)); // Mark as updated
+                } else {
+                    // Create new train
+                    const lineColor = lineColors[train.LineName] || '#333';
+                    const numCars = parseInt(train.Ncar) || 6;
+                    const series = train.Series || 'C';
+                    const carsPerRect = carsPerUnit[series] || 6;
+                    const numRectangles = Math.max(1, Math.round(numCars / carsPerRect));
+
+                    trainGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    trainGroup.classList.add('train-marker');
+                    trainGroup.setAttribute('data-train-id', String(tripId));
+                    trainGroup.setAttribute('transform', `translate(${position.x}, ${position.y}) rotate(${angle})`);
+                    trainGroup.style.opacity = position.opacity !== undefined ? position.opacity : 1;
+
+                    // Calculate offset to center the train at the origin
+                    const centerOffset = (numRectangles - 1) * 2.25 + 2;
+
+                    for (let i = 0; i < numRectangles; i++) {
+                        const offset = i * 4.5;
+
+                        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                        rect.setAttribute('x', -offset - 4 + centerOffset);
+                        rect.setAttribute('y', -1);
+                        rect.setAttribute('width', '4');
+                        rect.setAttribute('height', '2');
+                        rect.setAttribute('fill', lineColor);
+                        rect.setAttribute('rx', '0.3');
+                        rect.classList.add('train-car');
+                        trainGroup.appendChild(rect);
+                    }
+
+                    trainGroup.addEventListener('mouseenter', (e) => showTrainPopup(e, train));
+                    trainGroup.addEventListener('mouseleave', hideTrainPopup);
+
+                    trainsGroup.appendChild(trainGroup);
+                }
+            });
+
+            // Remove trains that no longer exist
+            existingTrains.forEach(el => el.remove());
+        }
+
+        function getStationCoords(stationName) {
+            return stationCoordinates[stationName] ||
+                stationCoordinates[stationName.replace(' Stn', '')] ||
+                stationCoordinates[stationName + ' Stn'];
+        }
+
+        function showTrainPopup(event, train) {
+            const popup = document.getElementById('trainPopup');
+            const details = [];
+            if (train.Ncar) details.push(`${train.Ncar} cars`);
+            if (train.Series) details.push(`Series ${train.Series}`);
+
+            popup.innerHTML = `
+        <div class="time">${formatTime12Hr(train.Departure)} - Platform ${train.Platform}</div>
+        <div class="dest">to ${train.Destination}</div>
+        ${details.length > 0 ? `<div class="details">${details.join(' • ')}</div>` : ''}
+        <div class="details">${train.StatusDetail}</div>
+    `;
+
+            popup.style.display = 'block';
+            popup.style.left = event.pageX + 15 + 'px';
+            popup.style.top = event.pageY + 15 + 'px';
+        }
+
+        function hideTrainPopup() {
+            document.getElementById('trainPopup').style.display = 'none';
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                // Pausing: accumulate the time we've simulated
+                const now = performance.now();
+                const realElapsed = now - playbackStartTime;
+                const simulatedElapsed = realElapsed * playbackSpeed;
+                accumulatedPlaybackTime += simulatedElapsed;
+                isPlaying = false;
+            } else {
+                // Starting playback
+                playbackStartTime = performance.now();
+                isPlaying = true;
+            }
+            updatePlayButton();
+        }
+
+        function updatePlayButton() {
+            const btn = document.getElementById('debugPlayBtn');
+            if (!btn) return;
+
+            if (isPlaying) {
+                btn.textContent = '⏸ Pause';
+                btn.classList.add('playing');
+            } else {
+                btn.textContent = '▶ Play';
+                btn.classList.remove('playing');
+            }
+        }
+
+        function resetToNow() {
+            frozenTime = new Date().getTime();
+            accumulatedPlaybackTime = 0;
+            isPlaying = false;
+            updatePlayButton();
+            updateDebugDisplay();
+        }
+
+        // Make functions available globally for onclick handlers
+        window.setFavoriteFromSelect = setFavoriteFromSelect;
+        window.clearFavoriteStation = clearFavoriteStation;
+        window.togglePlay = togglePlay;
+        window.resetToNow = resetToNow;
+        window.debugSetTime = debugSetTime;
+        window.toggleDebugMenu = toggleDebugMenu;
+
+        // Initialize on page load
+        window.addEventListener('load', loadData);
+
+        // Add slider interaction
+        document.addEventListener('DOMContentLoaded', function () {
+            const scrubber = document.getElementById('debugScrubber');
+            if (scrubber) {
+                scrubber.addEventListener('mousedown', function (e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const percentage = Math.max(0, Math.min(1, x / rect.width));
+
+                    if (validTimeRange.min && validTimeRange.max) {
+                        const totalMs = validTimeRange.max.getTime() - validTimeRange.min.getTime();
+                        const targetTime = new Date(validTimeRange.min.getTime() + (totalMs * percentage));
+
+                        // Set frozen time directly
+                        frozenTime = targetTime.getTime();
+                        accumulatedPlaybackTime = 0;
+                        if (isPlaying) {
+                            playbackStartTime = performance.now();
+                        }
+                        updateDebugDisplay();
+                        updateTrains();
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>
