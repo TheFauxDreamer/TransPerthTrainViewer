@@ -3,6 +3,7 @@ Trying to create a web-based visual representation of the "live" train data prov
 
 ## Notes
 - Fetching script takes about 30 minutes to complete to prevent 403s.
+- That's fine because it contains like 2 hours of train data. Haven't actually tested it back to back though...
 
 ## Todo
 
