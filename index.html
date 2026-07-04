@@ -1524,97 +1524,171 @@
         }
 
         async function loadData() {
+            // Try live API first, fall back to JSON
             try {
-                const response = await fetch('live_train_map.json');
-                if (!response.ok) throw new Error('Could not load data');
-                trainData = await response.json();
-
-                // Transform train-centric format to station-centric for compatibility
-                if (trainData.trains) {
-                    const stations = {};
-
-                    // Rebuild stations object from trains
-                    for (const [trainId, train] of Object.entries(trainData.trains)) {
-                        for (const stop of train.stops) {
-                            const stationName = stop.station;
-
-                            // Initialize station if not exists
-                            if (!stations[stationName]) {
-                                stations[stationName] = { StatusDetailList: [] };
-                            }
-
-                            // Add train to this station
-                            stations[stationName].StatusDetailList.push({
-                                TrainID: train.id,
-                                TripId: train.id,  // Also support old field name
-                                LineName: train.line,
-                                Destination: train.destination,
-                                Departure: stop.time,
-                                Platform: train.platform,
-                                Ncar: train.ncar,
-                                Series: train.series,
-                                StatusDetail: train.status
-                            });
-                        }
-                    }
-
-                    trainData.stations = stations;
+                await fetchLiveData();
+            } catch (e) {
+                console.warn('Live API unavailable, trying JSON fallback:', e.message);
+                try {
+                    await loadJsonFallback();
+                } catch (e2) {
+                    console.error('JSON fallback also failed:', e2.message);
+                    document.getElementById('timestamp').textContent = 'Data unavailable';
+                    return;
                 }
-                // Transform multi-line structure to flat structure for compatibility
-                else if (trainData.lines) {
-                    // Old multi-line format: merge all lines' stations into single object
-                    const mergedStations = {};
-                    for (const [lineName, lineData] of Object.entries(trainData.lines)) {
-                        Object.assign(mergedStations, lineData.stations);
+            }
+
+            const lineNameEl = document.getElementById('lineName');
+            const timestampEl = document.getElementById('timestamp');
+
+            if (lineNameEl) lineNameEl.textContent = 'Transperth Network';
+            if (timestampEl) timestampEl.textContent = `Live • ${trainData.timestamp}`;
+
+            stationOrder = Object.keys(trainData.stations);
+            calculateValidTimeRange();
+            loadFavoriteStation();
+            initializeFilters();
+            buildStationIndex();
+            attachStationClickHandlers();
+
+            // Main animation loop - runs at ~20fps for smooth motion
+            setInterval(() => {
+                if (debugMode && isPlaying) {
+                    const currentTime = getCurrentTime();
+                    if (currentTime >= validTimeRange.max) {
+                        const now = performance.now();
+                        const realElapsed = now - playbackStartTime;
+                        const simulatedElapsed = realElapsed * playbackSpeed;
+                        accumulatedPlaybackTime += simulatedElapsed;
+                        isPlaying = false;
+                        updatePlayButton();
                     }
-                    trainData.stations = mergedStations;
                 }
-                // Otherwise: keep existing trainData.stations for backward compatibility
+                updateTrains();
+                updateFavoriteStation();
+                if (debugMode) updateDebugDisplay();
+            }, 50);
 
-                const lineNameEl = document.getElementById('lineName');
-                const timestampEl = document.getElementById('timestamp');
+            // Refresh live data every hour
+            setInterval(async () => {
+                console.log('🔄 Hourly refresh starting...');
+                try {
+                    await fetchLiveData();
+                    stationOrder = Object.keys(trainData.stations);
+                    calculateValidTimeRange();
+                    buildStationIndex();
+                    const timestampEl = document.getElementById('timestamp');
+                    if (timestampEl) timestampEl.textContent = `Live • ${trainData.timestamp}`;
+                    console.log('✅ Hourly refresh complete');
+                } catch (e) {
+                    console.warn('Hourly refresh failed:', e.message);
+                }
+            }, 3600000); // 1 hour
+        }
 
-                if (lineNameEl) lineNameEl.textContent = trainData.line || 'Transperth Network';
-                if (timestampEl) timestampEl.textContent = `Data from ${trainData.timestamp}`;
+        // ── Live API fetching ──────────────────────────────────────────
 
-                stationOrder = Object.keys(trainData.stations);
-                calculateValidTimeRange();
-                loadFavoriteStation();
+        const LIVE_LINES = {
+            'Yanchep Line': ['Yanchep Stn','Eglinton Stn','Alkimos Stn','Butler Stn','Clarkson Stn','Currambine Stn','Joondalup Stn','Edgewater Stn','Whitfords Stn','Greenwood Stn','Warwick Stn','Stirling Stn','Glendalough Stn','Leederville Stn','Perth Underground Stn','Elizabeth Quay Stn'],
+            'Mandurah Line': ['Mandurah Stn','Lakelands Stn','Warnbro Stn','Rockingham Stn','Wellard Stn','Kwinana Stn','Aubin Grove Stn','Cockburn Central Stn','Murdoch Stn','Bull Creek Stn','Canning Bridge Stn','Elizabeth Quay Stn','Perth Underground Stn'],
+            'Fremantle Line': ['Fremantle Stn','North Fremantle Stn','Mosman Park Stn','Cottesloe Stn','Grant Street Stn','Swanbourne Stn','Claremont Stn','Loch Street Stn','Karrakatta Stn','Shenton Park Stn','Daglish Stn','Subiaco Stn','West Leederville Stn','City West Stn','Perth Stn','McIver Stn'],
+            'Midland Line': ['Midland Stn','Woodbridge Stn','East Guildford Stn','Guildford Stn','Bassendean Stn','Ashfield Stn','Bayswater Stn','Meltham Stn','Maylands Stn','Mt Lawley Stn','East Perth Stn','Claisebrook Stn','Perth Stn','McIver Stn'],
+            'Armadale Line': ['Armadale Stn','Sherwood Stn','Challis Stn','Kelmscott Stn','Seaforth Stn','Gosnells Stn','Maddington Stn','Kenwick Stn','Beckenham Stn','Cannington Stn','Queens Park Stn','Carlisle Stn','Oats Street Stn','Victoria Park Stn','Burswood Stn','Perth Stadium Stn','Perth Stn','McIver Stn'],
+            'Ellenbrook Line': ['Ellenbrook Stn','Whiteman Park Stn','Ballajura Stn','Noranda Stn','Morley Stn','Bayswater Stn'],
+            'Airport Line': ['High Wycombe Stn','Airport Central Stn','Redcliffe Stn','Ashfield Stn','Bayswater Stn'],
+            'Thornlie-Cockburn Line': ['Thornlie Stn','Nicholson Road Stn','Ranford Road Stn','Cockburn Central Stn']
+        };
 
-                // Initialize filter buttons with available train lines
-                initializeFilters();
+        const FETCH_DELAY_MS = 18000;  // 18s between stations
+        const LINE_DELAY_MS = 30000;   // 30s between lines
 
-                // Build station index for clickable stations
-                buildStationIndex();
+        function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-                // Attach click event handlers to station markers
-                attachStationClickHandlers();
+        async function fetchStation(line, station) {
+            const url = `/api/TrainLiveTimes/LiveStatus/GetStationLiveStatusAsync/${encodeURIComponent(line)}/${encodeURIComponent(station)}/false`;
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${station}`);
+            return resp.json();
+        }
 
-                // Main animation loop - runs at ~20fps for smooth motion
-                setInterval(() => {
-                    // Check if we've reached the end of valid range while playing
-                    if (debugMode && isPlaying) {
-                        const currentTime = getCurrentTime();
-                        if (currentTime >= validTimeRange.max) {
-                            // Stop at the end - accumulate current playback and pause
-                            const now = performance.now();
-                            const realElapsed = now - playbackStartTime;
-                            const simulatedElapsed = realElapsed * playbackSpeed;
-                            accumulatedPlaybackTime += simulatedElapsed;
-                            isPlaying = false;
-                            updatePlayButton();
+        function updateLoadProgress(line, station, lineIdx, stationIdx, lineNames, stationList) {
+            const totalStations = Object.values(LIVE_LINES).reduce((s, l) => s + l.length, 0);
+            let done = 0;
+            for (let k = 0; k < lineIdx; k++) done += LIVE_LINES[lineNames[k]].length;
+            done += stationIdx + 1;
+            const pct = Math.round(done / totalStations * 100);
+            const el = document.getElementById('timestamp');
+            if (el) el.textContent = `Loading ${pct}% — ${line.replace(' Line','')} • ${station.replace(' Stn','')}`;
+        }
+
+        async function fetchLiveData() {
+            const stations = {};
+            let lastUpdated = '';
+            const lineNames = Object.keys(LIVE_LINES);
+
+            // Initialize trainData immediately so trains appear as they load
+            trainData = { timestamp: 'Loading...', stations: {} };
+
+            for (let i = 0; i < lineNames.length; i++) {
+                const line = lineNames[i];
+                const stationList = LIVE_LINES[line];
+
+                for (let j = 0; j < stationList.length; j++) {
+                    const station = stationList[j];
+                    try {
+                        const data = await fetchStation(line, station);
+                        if (data && data.result === 'success') {
+                            stations[station] = data.data;
+                            if (data.data.LastUpdated) lastUpdated = data.data.LastUpdated;
                         }
+                    } catch (e) {
+                        console.warn(`Failed: ${station} — ${e.message}`);
                     }
 
-                    // Run updates every 50ms for smooth visual motion
-                    updateTrains();
-                    updateFavoriteStation();
-                    if (debugMode) {
-                        updateDebugDisplay();
+                    // Update trainData progressively so trains appear immediately
+                    trainData.stations = { ...stations };
+                    trainData.timestamp = lastUpdated || 'Loading...';
+                    stationOrder = Object.keys(trainData.stations);
+                    calculateValidTimeRange();
+                    buildStationIndex();
+
+                    updateLoadProgress(line, station, i, j, lineNames, stationList);
+
+                    const isLast = (i === lineNames.length - 1 && j === stationList.length - 1);
+                    if (!isLast) await sleep(FETCH_DELAY_MS);
+                }
+                if (i < lineNames.length - 1) await sleep(LINE_DELAY_MS - FETCH_DELAY_MS);
+            }
+
+            trainData = {
+                timestamp: lastUpdated || new Date().toLocaleString('en-AU'),
+                stations: stations
+            };
+        }
+
+        async function loadJsonFallback() {
+            const response = await fetch('live_train_map.json');
+            if (!response.ok) throw new Error('Could not load JSON');
+            trainData = await response.json();
+
+            if (trainData.trains) {
+                const stations = {};
+                for (const [trainId, train] of Object.entries(trainData.trains)) {
+                    for (const stop of train.stops) {
+                        if (!stations[stop.station]) stations[stop.station] = { StatusDetailList: [] };
+                        stations[stop.station].StatusDetailList.push({
+                            TrainID: train.id, TripId: train.id,
+                            LineName: train.line, Destination: train.destination,
+                            Departure: stop.time, Platform: train.platform,
+                            Ncar: train.ncar, Series: train.series, StatusDetail: train.status
+                        });
                     }
-                }, 50); // 50ms interval for smooth 20fps animation
-            } catch (error) {
-                console.error('Error loading data:', error);
+                }
+                trainData.stations = stations;
+            } else if (trainData.lines) {
+                const merged = {};
+                for (const ld of Object.values(trainData.lines)) Object.assign(merged, ld.stations);
+                trainData.stations = merged;
             }
         }
 
@@ -2600,30 +2674,47 @@
         function buildStationIndex() {
             stationIndex = {};
 
-            // Iterate through all trains and build index by station
-            Object.values(trainData.trains).forEach(train => {
-                if (!train.stops) return;
+            // Works with both station-centric (live API) and train-centric (JSON fallback) formats
+            if (trainData.stations) {
+                // Station-centric: iterate stations → StatusDetailList
+                for (const [stationName, stationData] of Object.entries(trainData.stations)) {
+                    if (!stationData || !stationData.StatusDetailList) continue;
+                    if (!stationIndex[stationName]) stationIndex[stationName] = [];
 
-                train.stops.forEach(stop => {
-                    const stationName = stop.station;
-                    if (!stationIndex[stationName]) {
-                        stationIndex[stationName] = [];
-                    }
-
-                    // Add this train to the station's list with its departure time
-                    stationIndex[stationName].push({
-                        ...train,
-                        departureTime: stop.time,
-                        LineName: train.line,
-                        Destination: train.destination,
-                        Platform: train.platform,
-                        Ncar: train.ncar,
-                        Series: train.series,
-                        StatusDetail: train.status,
-                        Departure: stop.time
+                    stationData.StatusDetailList.forEach(train => {
+                        stationIndex[stationName].push({
+                            ...train,
+                            departureTime: train.Departure,
+                            LineName: train.LineName,
+                            Destination: train.Destination,
+                            Platform: train.Platform,
+                            Ncar: train.Ncar,
+                            Series: train.Series,
+                            StatusDetail: train.StatusDetail,
+                            Departure: train.Departure
+                        });
+                    });
+                }
+            } else if (trainData.trains) {
+                // Train-centric: iterate trains → stops
+                Object.values(trainData.trains).forEach(train => {
+                    if (!train.stops) return;
+                    train.stops.forEach(stop => {
+                        if (!stationIndex[stop.station]) stationIndex[stop.station] = [];
+                        stationIndex[stop.station].push({
+                            ...train,
+                            departureTime: stop.time,
+                            LineName: train.line,
+                            Destination: train.destination,
+                            Platform: train.platform,
+                            Ncar: train.ncar,
+                            Series: train.series,
+                            StatusDetail: train.status,
+                            Departure: stop.time
+                        });
                     });
                 });
-            });
+            }
         }
 
         function getNextTrainsAtStation(stationName, limit = 3) {
